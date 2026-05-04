@@ -1,0 +1,35 @@
+<!-- /src/components/BridgeModal.html -->
+<!-- 이 파일은 브릿지 모달, 진단 카드, 스텝 버튼 등 컴포넌트 마크업 구조를 포함합니다. -->
+
+<!-- 1. 진단 카드 (Neumorphism 컴포넌트) -->
+<div class="diagnosis-card neumorphism radius-card" style="padding: 24px; max-width: 400px; margin: 0 auto;">
+  <h3 class="text-h3" style="margin-bottom: 8px;">피부 진단 시작하기</h3>
+  <p class="text-body" style="color: var(--color-text-secondary); margin-bottom: 24px;">내 피부에 가장 적합한 루틴을 알아보세요.</p>
+  <button class="radius-btn text-btn-secondary" style="background: var(--color-primary); color: white; border: none; padding: 12px 24px; width: 100%; cursor: pointer;">
+    진단하기
+  </button>
+</div>
+
+<!-- 2. 스텝 버튼 (Neumorphism 기반 선택지 버튼) -->
+<button class="step-button neumorphism radius-btn" style="padding: 16px 20px; width: 100%; text-align: left; background: var(--color-surface); color: var(--color-text-primary); cursor: pointer; display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+  <span class="text-body">1단계: 세안 직후 당김이 심한 편인가요?</span>
+  <svg class="icon-btn" viewBox="0 0 24 24" style="stroke: var(--color-primary);"><path d="M9 18l6-6-6-6"/></svg>
+</button>
+
+<!-- 3. 브릿지 모달 (Glassmorphism & Neumorphism 결합) -->
+<div id="bridge-modal" class="glassmorphism" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: center; z-index: 9999;">
+  <div class="neumorphism radius-card" style="padding: 32px; text-align: center; max-width: 90%; width: 340px;">
+    <!-- 타이틀 -->
+    <h2 class="text-h2" style="color: var(--color-primary); margin-bottom: 12px;">GenYou Lab</h2>
+    
+    <!-- 카피 -->
+    <p class="text-body" style="color: var(--color-text-secondary); margin-bottom: 24px;">
+      안전한 구매를 위해<br/>네이버 스마트스토어로 이동합니다.
+    </p>
+    
+    <!-- 진행 바 -->
+    <div style="width: 100%; background: var(--color-muted); height: 4px; border-radius: 2px; overflow: hidden; position: relative;">
+      <div id="bridge-progress" style="width: 0%; height: 100%; background: var(--color-primary); transition: width 0.8s ease-in-out;"></div>
+    </div>
+  </div>
+</div>

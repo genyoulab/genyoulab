@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenYou Lab | 피부가 쉴 시간을 돌려드립니다</title>
+  <meta name="description" content="The Art of Leaving It Alone — 내버려 두는 것의 미학. 젠유랩과 함께 피부가 쉴 시간을 돌려드립니다.">
+  <link rel="stylesheet" href="./style.css">
+
+  <meta property="og:title" content="GenYou Lab — 피부가 쉴 시간을 돌려드립니다">
+  <meta property="og:description" content="내버려 두는 것의 미학. 젠유랩과 함께 피부가 쉴 시간을 돌려드립니다.">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta property="og:type" content="website">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVR7NZR8MW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DVR7NZR8MW');
+  </script>
+</head>
+<body>
+  <header class="glassmorphism" style="position: sticky; top: 0; z-index: 100; padding: 16px 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="text-h3" style="color: var(--color-primary); text-decoration: none;">GenYou Lab</a>
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <a href="brand.html" class="text-body" style="color: var(--color-text-primary); text-decoration: none;">Brand & Community</a>
+        <a href="career.html" class="text-body" style="color: var(--color-text-primary); text-decoration: none;">Career</a>
+        <svg class="icon-body" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor"/></svg>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero-section" style="padding: 60px 0; position: relative; overflow: hidden;">
+      <canvas id="hero-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
+      <div class="container" style="position: relative; z-index: 1;">
+        <h2 class="text-h1" style="margin-bottom: 16px;">The Art of Leaving It Alone</h2>
+        <p class="text-body" style="color: var(--color-text-secondary); margin-bottom: 32px;">내버려 두는 것의 미학 — 피부가 쉴 시간을 돌려드립니다.</p>
+        
+        <!-- 3SecFix Section -->
+        <div class="sec-fix-container neumorphism radius-card" id="sec-fix-section" style="padding: 24px; margin-bottom: 40px; display: flex; gap: 16px; justify-content: center; text-align: center;">
+          <div class="sec-fix-step step-chik">
+            <h3 class="text-h2" style="color: var(--color-primary);">칙!</h3>
+            <p class="text-caption">150ms</p>
+          </div>
+          <div class="sec-fix-step step-tok">
+            <h3 class="text-h2" style="color: var(--color-primary);">톡!</h3>
+            <p class="text-caption">150ms</p>
+          </div>
+          <div class="sec-fix-step step-ssuk">
+            <h3 class="text-h2" style="color: var(--color-primary);">쓱!</h3>
+            <p class="text-caption">150ms</p>
+          </div>
+        </div>
+        
+        <div class="neumorphism radius-card" style="padding: 24px; max-width: 400px;">
+          <h3 class="text-h3" style="margin-bottom: 8px;">피부 진단 시작하기</h3>
+          <p class="text-body" style="color: var(--color-text-secondary); margin-bottom: 24px;">내 피부에 가장 적합한 루틴을 알아보세요.</p>
+          <button class="radius-btn text-btn-secondary" style="background: var(--color-primary); color: white; border: none; padding: 12px 24px; width: 100%; cursor: pointer;">
+            진단하기
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- <script src="./script.js"></script> -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const target = document.getElementById('sec-fix-section');
+      if (target) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              target.classList.add('animate');
+            }
+          });
+        }, { threshold: 0.5 });
+        observer.observe(target);
+      }
+    });
+  </script>
+  <script src="./src/scripts/particles.js"></script>
+</body>
+</html>

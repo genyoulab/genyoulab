@@ -1,0 +1,128 @@
+/* 폰트 로드 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+:root {
+  /* 1-2. 컬러 시스템 */
+  --color-primary: #4a5e2f;
+  --color-secondary: #7a9a3f;
+  --color-muted: #c8d4b0;
+  --color-surface: #f2f0e8;
+  --color-surface-2: #f7f5ee;
+  --color-text-primary: #2e2e2e;
+  --color-text-secondary: #6b6b6b;
+  --color-reject-bg: #ffe5e5;
+  --color-reject-text: #a03030;
+  
+  --color-kakao-border: rgba(254, 229, 0, 0.6);
+  --color-kakao-bg: #FEE500;
+  --color-naver-border: rgba(3, 199, 90, 0.5);
+  --color-naver-bg: #03C75A;
+}
+
+* {
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 1-3. 타이포그래피 */
+.text-h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 500; line-height: 1.2; }
+.text-h2 { font-size: clamp(20px, 3vw, 32px); font-weight: 500; line-height: 1.3; }
+.text-h3 { font-size: 18px; font-weight: 500; line-height: 1.4; }
+.text-body { font-size: 15px; font-weight: 400; line-height: 1.7; }
+.text-caption { font-size: 12px; font-weight: 400; line-height: 1.6; font-style: italic; }
+
+/* 버튼 텍스트 유틸리티 */
+.text-btn-primary { font-size: 15px; font-weight: 500; }
+.text-btn-secondary { font-size: 14px; font-weight: 500; }
+.text-btn-social { font-size: 14px; font-weight: 500; }
+.text-link-guest { font-size: 12px; font-weight: 400; text-decoration: underline; cursor: pointer; }
+.text-floating-price { font-size: 16px; font-weight: 500; }
+.text-floating-product { font-size: 12px; font-weight: 400; }
+
+/* 1-4. 컴포넌트 스타일 원칙 */
+.neumorphism {
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.08), -4px -4px 10px rgba(255,255,255,0.7);
+  background: var(--color-surface);
+  border-radius: 12px;
+  border: 0.5px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.glassmorphism {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(242,240,232,0.92);
+  border: 0.5px solid rgba(200,212,176,0.6);
+}
+
+.border-base { border: 0.5px solid var(--color-muted); }
+.border-active { border: 1px solid var(--color-primary); }
+
+.radius-card { border-radius: 16px; }
+.radius-btn { border-radius: 14px; }
+.radius-tag { border-radius: 10px; }
+
+svg { stroke-width: 1.2; stroke-linecap: round; fill: none; }
+.icon-body { width: 20px; height: 20px; }
+.icon-btn { width: 16px; height: 16px; }
+
+/* 1-5. 반응형 브레이크포인트 & 그리드 */
+.container { width: 100%; margin: 0 auto; }
+
+@media (max-width: 639px) {
+  .container { padding: 0 20px; }
+  .grid-product { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .container { padding: 0 32px; }
+  .grid-product { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+}
+
+@media (min-width: 1024px) {
+  .container { max-width: 1200px; padding: 0 48px; }
+  .grid-hero { display: grid; grid-template-columns: 5fr 7fr; gap: 24px; }
+  .grid-12col { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+}
+
+/* D-23: 3SecFix Micro-animations */
+.sec-fix-step {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.sec-fix-container.animate .step-chik {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0ms;
+}
+
+.sec-fix-container.animate .step-tok {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 450ms; /* 0ms + 150ms(duration) + 300ms(gap) */
+}
+
+.sec-fix-container.animate .step-ssuk {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 900ms; /* 450ms + 150ms(duration) + 300ms(gap) */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sec-fix-step {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
