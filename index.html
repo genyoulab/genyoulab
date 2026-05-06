@@ -29,7 +29,7 @@
       <a href="career.html">CAREER</a>
     </div>
     <div class="gnb-right" style="display: flex; align-items: center; gap: 16px;">
-      <a href="#" class="gnb-cta" onclick="openDiagnosis(); return false;">진단하기</a>
+      <a href="#" class="gnb-cta">진단하기</a>
       <div class="gnb-hamburger" onclick="toggleDrawer()">
         <span></span><span></span><span></span>
       </div>
@@ -47,7 +47,7 @@
       <a href="brand.html#community">COMMUNITY</a>
       <a href="career.html">CAREER</a>
     </div>
-    <a href="#" class="gnb-drawer-cta" onclick="openDiagnosis(); return false;">진단하기 시작하기</a>
+    <a href="#" class="gnb-drawer-cta">진단하기 시작하기</a>
   </div>
   <main>
     <section class="hero-section" style="padding: 60px 0; position: relative; overflow: hidden;">
@@ -315,7 +315,17 @@ function goToProduct() {
   closeDiagnosis();
   location.href = './product.html' + diagResultAnchor;
 }
-</script>
 
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.gnb-cta, .gnb-drawer-cta').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (typeof openDiagnosis === 'function') openDiagnosis();
+    });
+  });
+});
+</script>
 </body>
+
+
 </html>
