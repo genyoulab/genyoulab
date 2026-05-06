@@ -50,16 +50,35 @@
   </script>
 </head>
 <body>
-  <header class="glassmorphism" style="position: sticky; top: 0; z-index: 100; padding: 16px 0;">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-      <a href="index.html" class="text-h3" style="color: var(--color-primary); text-decoration: none;">GenYou Lab</a>
-      <div style="display: flex; gap: 16px; align-items: center;">
-        <a href="brand.html" class="text-body" style="color: var(--color-text-primary); text-decoration: none;">Brand & Community</a>
-        <a href="career.html" class="text-body" style="color: var(--color-text-primary); text-decoration: none;">Career</a>
-        <svg class="icon-body" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor"/></svg>
+    <nav>
+    <a href="index.html" class="gnb-logo">GenYou Lab</a>
+    <div class="gnb-menu">
+      <a href="brand.html">BRAND</a>
+      <a href="product.html">PRODUCT</a>
+      <a href="brand.html#community">COMMUNITY</a>
+      <a href="career.html">CAREER</a>
+    </div>
+    <div class="gnb-right" style="display: flex; align-items: center; gap: 16px;">
+      <a href="#" class="gnb-cta">진단하기</a>
+      <div class="gnb-hamburger" onclick="toggleDrawer()">
+        <span></span><span></span><span></span>
       </div>
     </div>
-  </header>
+  </nav>
+
+  <div id="gnb-drawer" class="gnb-drawer">
+    <div class="gnb-drawer-header">
+      <a href="index.html" class="gnb-logo">GenYou Lab</a>
+      <div class="gnb-close" onclick="toggleDrawer()">✕</div>
+    </div>
+    <div class="gnb-drawer-menu">
+      <a href="brand.html">BRAND</a>
+      <a href="product.html">PRODUCT</a>
+      <a href="brand.html#community">COMMUNITY</a>
+      <a href="career.html">CAREER</a>
+    </div>
+    <a href="#" class="gnb-drawer-cta">진단하기 시작하기</a>
+  </div>
 
   <main>
     <!-- Brand Hero -->
@@ -140,33 +159,31 @@
       });
 
       // Timeline Counter Animation
-      const counterElement = document.getElementById('year-counter');
-      const section = document.getElementById('counter-section');
-      const targetValue = 18;
-      let animated = false;
+      function animateCounter(el, target, duration) {
+        const start = performance.now();
+        function update(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          // ease-out 적용
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target);
+          if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+      }
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !animated) {
-            animated = true;
-            let current = 0;
-            const duration = 2000; // 2 seconds
-            const stepTime = Math.abs(Math.floor(duration / targetValue));
-            
-            const timer = setInterval(() => {
-              current += 1;
-              counterElement.innerText = current;
-              if (current >= targetValue) {
-                clearInterval(timer);
-                counterElement.innerText = targetValue; // 18
-              }
-            }, stepTime);
+      const counterEl = document.getElementById('year-counter');
+      if (counterEl) {
+        const observer = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+            animateCounter(counterEl, 18, 1500);
+            observer.disconnect(); // 1회만 실행
           }
-        });
-      }, { threshold: 0.5 });
-
-      observer.observe(section);
+        }, { threshold: 0.5 });
+        observer.observe(document.getElementById('counter-section') || counterEl);
+      }
     });
   </script>
+  <script src="./script.js"></script>
 </body>
 </html>

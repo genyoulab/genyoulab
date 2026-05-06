@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenYou Lab | Product</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="gnb-logo">GenYou Lab</a>
+    <div class="gnb-menu">
+      <a href="brand.html">BRAND</a>
+      <a href="product.html">PRODUCT</a>
+      <a href="brand.html#community">COMMUNITY</a>
+      <a href="career.html">CAREER</a>
+    </div>
+    <div class="gnb-right" style="display: flex; align-items: center; gap: 16px;">
+      <a href="#" class="gnb-cta">진단하기</a>
+      <div class="gnb-hamburger" onclick="toggleDrawer()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div id="gnb-drawer" class="gnb-drawer">
+    <div class="gnb-drawer-header">
+      <a href="index.html" class="gnb-logo">GenYou Lab</a>
+      <div class="gnb-close" onclick="toggleDrawer()">✕</div>
+    </div>
+    <div class="gnb-drawer-menu">
+      <a href="brand.html">BRAND</a>
+      <a href="product.html">PRODUCT</a>
+      <a href="brand.html#community">COMMUNITY</a>
+      <a href="career.html">CAREER</a>
+    </div>
+    <a href="#" class="gnb-drawer-cta">진단하기 시작하기</a>
+  </div>
+
+  <main>
+    <!-- Reset Mist -->
+    <section id="reset-mist" class="container grid-hero" style="padding: 60px 0; border-bottom: 0.5px solid var(--color-muted);">
+      <div class="product-image" style="background: var(--color-surface-2); border-radius: 16px; min-height: 400px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+        <span class="text-caption" style="color: var(--color-text-secondary);">Image Placeholder</span>
+      </div>
+      <div class="product-info" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <h2 class="text-h3" style="color: var(--color-primary); margin-bottom: 8px;">칙! — 뿌리고 3초 기다리세요</h2>
+          <h1 class="text-h1" style="margin-bottom: 12px;">GenYou Reset Mist</h1>
+          <p class="text-body" style="color: var(--color-text-secondary); margin-bottom: 24px;">유수분 최적 밸런싱. 세안 직후 예민한 피부의 첫 번째 리셋.</p>
+          
+          <div style="margin-bottom: 24px;">
+            <span class="ing-tag">올리브 워터</span>
+            <span class="ing-tag">슈퍼 센텔라</span>
+            <span class="ing-tag">라벤더</span>
+            <span class="ing-tag">일랑일랑</span>
+            <br>
+            <div style="margin-top: 8px;">
+              <span class="ing-reject">계면활성제 ✕</span>
+              <span class="ing-reject">정제수 ✕</span>
+            </div>
+          </div>
+
+          <p class="text-body" style="margin-bottom: 8px;"><strong>When:</strong> 세안 직후 / 외부 자극 후 / 피부가 뜨거울 때</p>
+          <p class="text-body" style="margin-bottom: 16px;"><strong>How:</strong> 상층(유상)과 하층(수상)이 섞이도록 10초 흔든 후 분사</p>
+          <p class="text-caption" style="color: var(--color-primary); margin-bottom: 32px;">기능: 주름개선 & 미백 이중기능성</p>
+        </div>
+
+        <div class="mobile-floating-bar">
+          <button class="buy-btn" onclick="openSmartstore('reset-mist')" aria-label="네이버 스마트스토어에서 Reset Mist 구매하기">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 11V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V11M5 9H19L20 21H4L5 9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            네이버에서 구매하기
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Restore Serum -->
+    <section id="restore-serum" class="container grid-hero" style="padding: 60px 0; border-bottom: 0.5px solid var(--color-muted);">
+      <div class="product-image" style="background: var(--color-surface-2); border-radius: 16px; min-height: 400px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+        <span class="text-caption" style="color: var(--color-text-secondary);">Image Placeholder</span>
+      </div>
+      <div class="product-info" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <h2 class="text-h3" style="color: var(--color-primary); margin-bottom: 8px;">톡! — 문지르지 마세요. 흡수는 피부가 합니다</h2>
+          <h1 class="text-h1" style="margin-bottom: 12px;">GenYou Restore Serum</h1>
+          <p class="text-body" style="color: var(--color-text-secondary); margin-bottom: 24px;">촘촘히 채워주는 수분 밀도. 속당김과 컨디션이 흔들릴 때.</p>
+          
+          <div style="margin-bottom: 24px;">
+            <span class="ing-tag">올리브 워터</span>
+            <span class="ing-tag">슈퍼 센텔라</span>
+            <span class="ing-tag">녹차 추출물</span>
+            <span class="ing-tag">감초뿌리</span>
+            <br>
+            <div style="margin-top: 8px;">
+              <span class="ing-reject">계면활성제 ✕</span>
+              <span class="ing-reject">정제수 ✕</span>
+            </div>
+          </div>
+
+          <p class="text-body" style="margin-bottom: 8px;"><strong>When:</strong> 속당김이 느껴질 때 / 루틴을 단순화하고 싶을 때</p>
+          <p class="text-body" style="margin-bottom: 16px;"><strong>How:</strong> 이마와 양 볼에 직접 펌핑하여 살짝 펴 줍니다. 여러 번 덧바르면 수분감이 오래 지속됩니다.</p>
+          <p class="text-caption" style="color: var(--color-primary); margin-bottom: 32px;">기능: 주름개선 & 미백 이중기능성</p>
+        </div>
+
+        <div class="mobile-floating-bar">
+          <button class="buy-btn" onclick="openSmartstore('restore-serum')" aria-label="네이버 스마트스토어에서 Restore Serum 구매하기">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 11V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V11M5 9H19L20 21H4L5 9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            네이버에서 구매하기
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recover Cream Balm -->
+    <section id="recover-balm" class="container grid-hero" style="padding: 60px 0;">
+      <div class="product-image" style="background: var(--color-surface-2); border-radius: 16px; min-height: 400px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+        <span class="text-caption" style="color: var(--color-text-secondary);">Image Placeholder</span>
+      </div>
+      <div class="product-info" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <h2 class="text-h3" style="color: var(--color-primary); margin-bottom: 8px;">쓱! — 얇게, 덮듯이. 보호막만 남깁니다</h2>
+          <h1 class="text-h1" style="margin-bottom: 12px;">GenYou Recover Cream Balm</h1>
+          <p class="text-body" style="color: var(--color-text-secondary); margin-bottom: 24px;">가볍지만 쫀쫀한 마지막 보호막. 밤 루틴과 시술 후 회복에.</p>
+          
+          <div style="margin-bottom: 24px;">
+            <span class="ing-tag">올리브 워터</span>
+            <span class="ing-tag">슈퍼 센텔라</span>
+            <span class="ing-tag">황금</span>
+            <span class="ing-tag">마트리카리아</span>
+            <br>
+            <div style="margin-top: 8px;">
+              <span class="ing-reject">계면활성제 ✕</span>
+              <span class="ing-reject">정제수 ✕</span>
+            </div>
+          </div>
+
+          <p class="text-body" style="margin-bottom: 8px;"><strong>When:</strong> 밤 루틴 / 시술 및 자극 후 수분 유지가 절실한 날</p>
+          <p class="text-body" style="margin-bottom: 16px;"><strong>How:</strong> 적당량을 덜어 가볍게 고루 펴 바릅니다. 지쳐 있는 경우 얇게 여러 번 덧바릅니다.</p>
+          <p class="text-caption" style="color: var(--color-primary); margin-bottom: 32px;">기능: 주름개선 & 미백 이중기능성</p>
+        </div>
+
+        <div class="mobile-floating-bar">
+          <button class="buy-btn" onclick="openSmartstore('recover-balm')" aria-label="네이버 스마트스토어에서 Recover Cream Balm 구매하기">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 11V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V11M5 9H19L20 21H4L5 9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            네이버에서 구매하기
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="./script.js"></script>
+
+  
+<div id="floating-bar"
+  role="complementary" aria-label="제품 구매 바"
+  style="display:none; position:sticky; bottom:0; left:0; right:0;
+         background:rgba(242,240,232,0.96); backdrop-filter:blur(16px);
+         border-top:0.5px solid #c8d4b0;
+         padding:12px 20px; padding-bottom:calc(12px + env(safe-area-inset-bottom));
+         align-items:center; justify-content:space-between; gap:12px;
+         transform:translateY(100%); transition:transform 0.3s ease; z-index:100;">
+  <div>
+    <div id="float-product-name"
+      style="font-family:'Pretendard',sans-serif; font-size:12px;
+             font-weight:400; color:#6b6b6b;"></div>
+    <div id="float-price"
+      style="font-family:'Pretendard',sans-serif; font-size:16px;
+             font-weight:500; color:#2e2e2e;"></div>
+  </div>
+  <button id="float-buy-btn"
+    style="display:flex; align-items:center; gap:6px;
+           padding:12px 20px; border-radius:12px;
+           background:#4a5e2f; border:none;
+           font-family:'Pretendard',sans-serif; font-size:14px;
+           font-weight:500; color:#ffffff; cursor:pointer;
+           white-space:nowrap; min-height:44px;
+           transition:background 0.15s, transform 0.1s;"
+    onclick="floatBuyClick()">
+    네이버에서 구매하기
+  </button>
+</div>
+
+  <div id="bridge-modal" role="dialog" aria-modal="true"
+    aria-label="네이버 스마트스토어로 이동합니다"
+    style="display:none; position:fixed; inset:0; z-index:9999;
+           background:rgba(242,240,232,0.96); backdrop-filter:blur(12px);
+           align-items:center; justify-content:center;">
+    <div style="text-align:center; padding:32px 24px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:20px;
+                  font-weight:500; font-style:italic; color:#4a5e2f; margin-bottom:20px;">
+        GenYou
+      </div>
+      <p style="font-family:'Pretendard',sans-serif; font-size:15px;
+                font-weight:400; color:#2e2e2e; line-height:1.7; margin-bottom:20px;">
+        안전한 구매를 위해<br>네이버 스마트스토어로 이동합니다
+      </p>
+      <div style="width:200px; height:2px; background:#c8d4b0;
+                  border-radius:1px; margin:0 auto 20px; overflow:hidden;">
+        <div id="bridge-bar" style="height:100%; width:0%; background:#4a5e2f;
+             border-radius:1px; transition:width 0.8s ease-in-out;"></div>
+      </div>
+      <div style="font-family:'Pretendard',sans-serif; font-size:13px;
+                  color:#03C75A; font-weight:500;">N SmartStore</div>
+    </div>
+  </div>
+
+</body>
+</html>
