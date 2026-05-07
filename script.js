@@ -92,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 모바일에서만 플로팅 바 활성화
   const isMobileDevice = window.innerWidth < 640;
   if (isMobileDevice) {
-    floatingBar.style.display = 'flex';
 
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

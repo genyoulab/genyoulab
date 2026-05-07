@@ -321,3 +321,17 @@ nav {
     margin-top: auto;
   }
 }
+
+/* 플로팅 바 모바일 전용 처리 */
+#floating-bar {
+  display: none;
+  padding: 12px 20px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom));
+}
+
+/* 모바일에서만 표시 */
+@media (max-width: 639px) {
+  #floating-bar {
+    display: flex;
+  }
+}

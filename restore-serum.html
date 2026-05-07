@@ -55,8 +55,27 @@
   <main>
     <section class="hero-section" id="hero-buy-section" style="min-height: 80vh; padding: 60px 0; display: flex; flex-direction: column; justify-content: center;">
       <div class="container grid-hero">
-        <div class="hero-image neumorphism radius-card" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-          <p>Restore Serum Image</p>
+        <div style="background:linear-gradient(135deg, #dce8d0 0%, #b8cba8 100%);
+            border-radius:16px; width:100%;
+            aspect-ratio:4/5; display:flex; flex-direction:column;
+            align-items:center; justify-content:center; gap:12px;
+            position:relative; overflow:hidden;">
+          <div style="width:60px; height:60px; border-radius:50%;
+                      background:rgba(255,255,255,0.5); display:flex;
+                      align-items:center; justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <circle cx="14" cy="15" r="8" stroke="#4a5e2f" stroke-width="1.5"
+                      fill="rgba(74,94,47,0.1)"/>
+              <path d="M14 10V15L17 18" stroke="#4a5e2f" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M10 5H18" stroke="#4a5e2f" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:16px; font-weight:500;
+                      color:#4a5e2f; letter-spacing:0.05em;">RESTORE SERUM</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:400;
+                      color:#6b7a4f; letter-spacing:0.1em;">톡!</div>
+          <div style="position:absolute; bottom:16px; right:16px; font-family:'Pretendard',sans-serif;
+                      font-size:10px; color:#7a9a3f; opacity:0.6;">준비중</div>
         </div>
         <div class="hero-info" style="display: flex; flex-direction: column; justify-content: center;">
           <h2 class="text-h1" style="margin-bottom: 8px;">Restore Serum</h2>
