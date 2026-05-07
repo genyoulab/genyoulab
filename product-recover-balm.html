@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenYou Recover Cream Balm — 쓱! 크림 밤 | GenYou Lab</title>
+  <meta name="description"
+    content="밤 루틴과 시술 후 회복. 쓱 얹으면 피부 보호막이 완성되는 GenYou Recover Cream Balm.">
+  <meta property="og:title" content="GenYou Recover Cream Balm | GenYou Lab">
+  <meta property="og:description"
+    content="밤 루틴과 시술 후 회복. 쓱 얹으면 피부 보호막이 완성되는 GenYou Recover Cream Balm.">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="gnb-logo">GenYou Lab</a>
+    <div class="gnb-menu">
+      <a href="brand.html">BRAND</a>
+      <a href="product.html">PRODUCT</a>
+      <a href="brand.html#community">COMMUNITY</a>
+      <a href="career.html">CAREER</a>
+    </div>
+    <div class="gnb-right" style="display: flex; align-items: center; gap: 16px;">
+      <button onclick="openDiagnosis()" class="gnb-cta"
+  style="font-family:'Pretendard',sans-serif; font-size:13px; font-weight:500;
+         color:#ffffff; background:#4a5e2f; border:none; border-radius:24px;
+         padding:8px 20px; cursor:pointer;">
+  진단하기
+</button>
+      <div class="gnb-hamburger" onclick="toggleDrawer()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div id="gnb-drawer" class="gnb-drawer">
+    <div class="gnb-drawer-header">
+      <a href="index.html" class="gnb-logo">GenYou Lab</a>
+      <div class="gnb-close" onclick="toggleDrawer()">✕</div>
+    </div>
+    <div class="gnb-drawer-menu">
+      <a href="brand.html">BRAND</a>
+      <a href="product.html">PRODUCT</a>
+      <a href="brand.html#community">COMMUNITY</a>
+      <a href="career.html">CAREER</a>
+    </div>
+    <button onclick="openDiagnosis(); toggleDrawer();"
+  style="width:calc(100% - 40px); height:52px; background:#4a5e2f; color:#fff;
+         border:none; border-radius:14px; font-family:'Pretendard',sans-serif;
+         font-size:15px; font-weight:500; cursor:pointer; margin:20px;">
+  진단하기 시작하기
+</button>
+  </div>
+
+  <main>
+    <!-- 섹션 1: 히어로 -->
+    <section id="recover-balm" class="container grid-hero" style="padding: 60px 0; border-bottom: 0.5px solid var(--color-muted);">
+      <!-- 제품 임시 비주얼 -->
+      <div style="background:linear-gradient(135deg, #d4e4c4 0%, #a8be98 100%);
+            border-radius:20px; width:100%; aspect-ratio:4/5;
+            display:flex; flex-direction:column;
+            align-items:center; justify-content:center; gap:16px;">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <path d="M12 24C12 24 16 20 24 20C32 20 36 24 36 24V36C36 38.2 34.2 40 32 40H16C13.8 40 12 38.2 12 36V24Z"
+                stroke="#4a5e2f" stroke-width="2" fill="rgba(74,94,47,0.12)"/>
+          <path d="M20 20V16H28V20" stroke="#4a5e2f" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M20 30C20 30 22 34 24 34C26 34 28 30 28 30"
+                stroke="#4a5e2f" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div style="font-family:'Pretendard',sans-serif; font-size:18px;
+                    font-weight:500; color:#4a5e2f; letter-spacing:0.06em;">
+          RECOVER CREAM BALM
+        </div>
+        <div style="font-family:'Pretendard',sans-serif; font-size:13px;
+                    color:#7a9a3f; letter-spacing:0.12em;">쓱!</div>
+        <div style="font-family:'Pretendard',sans-serif; font-size:10px;
+                    color:#7a9a3f; opacity:0.6; margin-top:8px;">제품 이미지 준비중</div>
+      </div>
+
+      <!-- 제품 정보 -->
+      <div class="product-info" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <!-- 상단 라벨 -->
+          <div style="font-family:'Pretendard',sans-serif; font-size:11px;
+                      color:#7a9a3f; font-weight:500; letter-spacing:0.1em;
+                      text-transform:uppercase; margin-bottom:8px;">
+            3SecFix™ Step 03
+          </div>
+
+          <!-- 태그라인 -->
+          <div style="font-family:'Pretendard',sans-serif; font-size:15px;
+                      font-weight:400; color:#6b6b6b; margin-bottom:6px;">
+            쓱! — 얇게, 덮듯이. 보호막만 남깁니다
+          </div>
+
+          <!-- 제품명 -->
+          <h1 style="font-family:'Pretendard',sans-serif; font-size:clamp(24px,4vw,40px);
+                     font-weight:500; color:#2e2e2e; line-height:1.2; margin-bottom:12px;">
+            GenYou<br>Recover Cream Balm
+          </h1>
+
+          <!-- 한 줄 설명 -->
+          <p style="font-family:'Pretendard',sans-serif; font-size:15px;
+                    color:#6b6b6b; line-height:1.7; margin-bottom:20px;">
+            가볍지만 쫀쫀한 마지막 보호막.<br>
+            밤 루틴과 시술 후 회복에.
+          </p>
+
+          <!-- 핵심 수치 (임상결과 미리보기) -->
+          <div style="display:flex; gap:16px; margin-bottom:24px; flex-wrap:wrap;">
+            <div style="border:0.5px solid #c8d4b0; border-radius:12px; padding:12px 16px;
+                        background:#f7f5ee; text-align:center; min-width:80px;">
+              <div style="font-family:'Pretendard',sans-serif; font-size:22px;
+                          font-weight:500; color:#4a5e2f;">0</div>
+              <div style="font-family:'Pretendard',sans-serif; font-size:10px;
+                          color:#6b6b6b; margin-top:2px;">수분 밀도 개선</div>
+            </div>
+            <div style="border:0.5px solid #c8d4b0; border-radius:12px; padding:12px 16px;
+                        background:#f7f5ee; text-align:center; min-width:80px;">
+              <div style="font-family:'Pretendard',sans-serif; font-size:22px;
+                          font-weight:500; color:#4a5e2f;">0</div>
+              <div style="font-family:'Pretendard',sans-serif; font-size:10px;
+                          color:#6b6b6b; margin-top:2px;">흡수 시간</div>
+            </div>
+            <div style="border:0.5px solid #c8d4b0; border-radius:12px; padding:12px 16px;
+                        background:#f7f5ee; text-align:center; min-width:80px;">
+              <div style="font-family:'Pretendard',sans-serif; font-size:22px;
+                          font-weight:500; color:#4a5e2f;">0</div>
+              <div style="font-family:'Pretendard',sans-serif; font-size:10px;
+                          color:#6b6b6b; margin-top:2px;">피부 자극 건수</div>
+            </div>
+          </div>
+
+          <!-- 구매 버튼 -->
+          <div class="mobile-floating-bar" style="flex-direction: column;">
+            <button class="buy-btn" onclick="openSmartstore('recover-balm')"
+              aria-label="네이버 스마트스토어에서 Recover Cream Balm 구매하기"
+              style="display:flex; align-items:center; justify-content:center; gap:8px;
+                     width:100%; max-width:320px; height:56px; border-radius:16px;
+                     background:#f2f0e8; border:0.5px solid rgba(3,199,90,0.5);
+                     font-family:'Pretendard',sans-serif; font-size:15px;
+                     font-weight:500; color:#2e2e2e; cursor:pointer;
+                     transition:background .15s, transform .1s;"
+              onmouseover="this.style.background='#e8f5ec'"
+              onmouseout="this.style.background='#f2f0e8'"
+              onmousedown="this.style.transform='scale(0.97)'"
+              onmouseup="this.style.transform='scale(1)'">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 13V3L7.5 10V3" stroke="#03C75A" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              네이버에서 구매하기
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                   style="transition:transform .15s">
+                <path d="M3 7H11M8 4L11 7L8 10" stroke="#6b6b6b"
+                      stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- 기능성 인증 -->
+          <div style="margin-top:14px; font-family:'Pretendard',sans-serif;
+                      font-size:11px; color:#7a9a3f; font-style:italic;">
+            주름개선 & 미백 이중기능성 인증
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션 2 — 제품 상세 설명 -->
+    <section style="padding:80px 0; background:#f7f5ee;">
+      <div style="max-width:1200px; margin:0 auto; padding:0 48px;">
+
+        <!-- 섹션 타이틀 -->
+        <div style="font-family:'Pretendard',sans-serif; font-size:11px;
+                    color:#7a9a3f; font-weight:500; letter-spacing:0.1em;
+                    text-transform:uppercase; margin-bottom:12px;">HOW TO USE</div>
+        <h2 style="font-family:'Pretendard',sans-serif; font-size:clamp(22px,3vw,32px);
+                   font-weight:500; color:#2e2e2e; margin-bottom:40px;">
+          사용법
+        </h2>
+
+        <!-- When / How 카드 -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+                    gap:20px; margin-bottom:48px;">
+
+          <div style="border:0.5px solid #c8d4b0; border-radius:16px; padding:24px;
+                      background:#fff; box-shadow:4px 4px 12px rgba(0,0,0,0.05),
+                      -4px -4px 12px rgba(255,255,255,0.8);">
+            <div style="font-family:'Pretendard',sans-serif; font-size:12px;
+                        color:#7a9a3f; font-weight:500; letter-spacing:0.08em;
+                        margin-bottom:10px;">WHEN</div>
+            <ul style="font-family:'Pretendard',sans-serif; font-size:14px;
+                       color:#2e2e2e; line-height:2; list-style:none; padding:0; margin:0;">
+              <li>밤 루틴</li>
+              <li>시술 및 자극 후 수분 유지가 절실한 날</li>
+            </ul>
+          </div>
+
+          <div style="border:0.5px solid #c8d4b0; border-radius:16px; padding:24px;
+                      background:#fff; box-shadow:4px 4px 12px rgba(0,0,0,0.05),
+                      -4px -4px 12px rgba(255,255,255,0.8);">
+            <div style="font-family:'Pretendard',sans-serif; font-size:12px;
+                        color:#7a9a3f; font-weight:500; letter-spacing:0.08em;
+                        margin-bottom:10px;">HOW</div>
+            <p style="font-family:'Pretendard',sans-serif; font-size:14px;
+                      color:#2e2e2e; line-height:1.8; margin:0;">
+              적당량을 덜어 가볍게 고루 펴 바릅니다.<br>
+              지쳐 있는 경우 얇게 <strong>여러 번 덧바릅니다.</strong>
+            </p>
+          </div>
+
+        </div>
+
+        <!-- 성분 태그 -->
+        <div style="font-family:'Pretendard',sans-serif; font-size:12px;
+                    color:#7a9a3f; font-weight:500; letter-spacing:0.08em;
+                    margin-bottom:12px;">KEY INGREDIENTS</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="font-size:12px; padding:6px 14px; background:#f2f0e8;
+                       border:0.5px solid #c8d4b0; border-radius:20px; color:#2e2e2e;">
+            올리브 워터
+          </span>
+          <span style="font-size:12px; padding:6px 14px; background:#f2f0e8;
+                       border:0.5px solid #c8d4b0; border-radius:20px; color:#2e2e2e;">
+            슈퍼 센텔라
+          </span>
+          <span style="font-size:12px; padding:6px 14px; background:#f2f0e8;
+                       border:0.5px solid #c8d4b0; border-radius:20px; color:#2e2e2e;">
+            황금
+          </span>
+          <span style="font-size:12px; padding:6px 14px; background:#f2f0e8;
+                       border:0.5px solid #c8d4b0; border-radius:20px; color:#2e2e2e;">
+            마트리카리아
+          </span>
+          <span style="font-size:12px; padding:6px 14px; background:#ffe5e5;
+                       border:0.5px solid #f0b0b0; border-radius:20px; color:#a03030;">
+            계면활성제 ✕
+          </span>
+          <span style="font-size:12px; padding:6px 14px; background:#ffe5e5;
+                       border:0.5px solid #f0b0b0; border-radius:20px; color:#a03030;">
+            정제수 ✕
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 섹션 3 — 임상결과 (핵심 섹션) -->
+    <section id="clinical" style="padding:80px 0; background:#f2f0e8;">
+      <div style="max-width:1200px; margin:0 auto; padding:0 48px;">
+
+        <!-- 섹션 헤더 -->
+        <div style="font-family:'Pretendard',sans-serif; font-size:11px;
+                    color:#7a9a3f; font-weight:500; letter-spacing:0.1em;
+                    text-transform:uppercase; margin-bottom:12px;">CLINICAL RESULTS</div>
+        <h2 style="font-family:'Pretendard',sans-serif; font-size:clamp(22px,3vw,32px);
+                   font-weight:500; color:#2e2e2e; margin-bottom:8px;">
+          임상 시험 결과
+        </h2>
+        <p style="font-family:'Pretendard',sans-serif; font-size:14px;
+                  color:#6b6b6b; margin-bottom:48px; font-style:italic;">
+          [시험 기관명] · [시험 기간] · [참여 인원]명 대상
+        </p>
+
+        <!-- 수치 데이터 카드 3종 -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+                    gap:20px; margin-bottom:56px;">
+
+          <div style="border:0.5px solid #c8d4b0; border-radius:20px; padding:32px 24px;
+                      background:#fff; text-align:center;
+                      box-shadow:6px 6px 16px rgba(0,0,0,0.06),-6px -6px 16px rgba(255,255,255,0.9);">
+            <div style="font-family:'Pretendard',sans-serif; font-size:48px;
+                        font-weight:500; color:#4a5e2f; line-height:1;"
+                 id="num-moisture">0</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:14px;
+                        color:#7a9a3f; font-weight:500; margin:6px 0;">%</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:13px;
+                        color:#2e2e2e; font-weight:500; margin-bottom:4px;">수분 밀도 개선</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px;
+                        color:#6b6b6b;">사용 4주 후 측정</div>
+          </div>
+
+          <div style="border:0.5px solid #c8d4b0; border-radius:20px; padding:32px 24px;
+                      background:#fff; text-align:center;
+                      box-shadow:6px 6px 16px rgba(0,0,0,0.06),-6px -6px 16px rgba(255,255,255,0.9);">
+            <div style="font-family:'Pretendard',sans-serif; font-size:48px;
+                        font-weight:500; color:#4a5e2f; line-height:1;"
+                 id="num-irritation">0</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:14px;
+                        color:#7a9a3f; font-weight:500; margin:6px 0;">건</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:13px;
+                        color:#2e2e2e; font-weight:500; margin-bottom:4px;">피부 자극 반응</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px;
+                        color:#6b6b6b;">전체 시험 기간 내</div>
+          </div>
+
+          <div style="border:0.5px solid #c8d4b0; border-radius:20px; padding:32px 24px;
+                      background:#fff; text-align:center;
+                      box-shadow:6px 6px 16px rgba(0,0,0,0.06),-6px -6px 16px rgba(255,255,255,0.9);">
+            <div style="font-family:'Pretendard',sans-serif; font-size:48px;
+                        font-weight:500; color:#4a5e2f; line-height:1;"
+                 id="num-barrier">0</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:14px;
+                        color:#7a9a3f; font-weight:500; margin:6px 0;">%</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:13px;
+                        color:#2e2e2e; font-weight:500; margin-bottom:4px;">피부 장벽 수치 개선</div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px;
+                        color:#6b6b6b;">TEWL 수치 기준</div>
+          </div>
+
+        </div>
+
+        <!-- 카운트업 애니메이션 스크립트 -->
+        <script>
+        (function(){
+          function animateNum(el, target, suffix, duration){
+            let animated=false;
+            const obs=new IntersectionObserver(entries=>{
+              if(entries[0].isIntersecting && !animated){
+                animated=true;
+                const start=performance.now();
+                function update(now){
+                  const p=Math.min((now-start)/duration,1);
+                  const eased=1-Math.pow(1-p,3);
+                  el.textContent=Math.round(eased*target);
+                  if(p<1) requestAnimationFrame(update);
+                  else el.textContent=target;
+                }
+                requestAnimationFrame(update);
+                obs.disconnect();
+              }
+            },{threshold:0.5});
+            obs.observe(el);
+          }
+          animateNum(document.getElementById('num-moisture'),   0, '%', 1500);
+          animateNum(document.getElementById('num-irritation'),  0, '건', 800);
+          animateNum(document.getElementById('num-barrier'),    0, '%', 1500);
+        })();
+        </script>
+
+        <!-- 시험 성적서 표 -->
+        <div style="margin-bottom:56px;">
+          <div style="font-family:'Pretendard',sans-serif; font-size:15px;
+                      font-weight:500; color:#2e2e2e; margin-bottom:16px;">
+            시험 항목별 성적
+          </div>
+          <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+            <table style="width:100%; border-collapse:collapse; font-family:'Pretendard',sans-serif;
+                          font-size:13px; min-width:480px;">
+              <thead>
+                <tr style="background:#4a5e2f;">
+                  <th style="padding:12px 16px; text-align:left; color:#fff;
+                             font-weight:500; border-radius:10px 0 0 0;">시험 항목</th>
+                  <th style="padding:12px 16px; text-align:center; color:#fff; font-weight:500;">
+                    사용 전
+                  </th>
+                  <th style="padding:12px 16px; text-align:center; color:#fff; font-weight:500;">
+                    4주 후
+                  </th>
+                  <th style="padding:12px 16px; text-align:center; color:#fff;
+                             font-weight:500; border-radius:0 10px 0 0;">개선율</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background:#fff; border-bottom:0.5px solid #e8e4da;">
+                  <td style="padding:14px 16px; color:#2e2e2e;">피부 수분 밀도</td>
+                  <td style="padding:14px 16px; text-align:center; color:#6b6b6b;">
+                    [측정값 입력]
+                  </td>
+                  <td style="padding:14px 16px; text-align:center; color:#4a5e2f; font-weight:500;">
+                    [측정값 입력]
+                  </td>
+                  <td style="padding:14px 16px; text-align:center;">
+                    <span style="background:#EAF3DE; color:#27500A; padding:2px 10px;
+                                 border-radius:10px; font-weight:500; font-size:12px;">
+                      0%
+                    </span>
+                  </td>
+                </tr>
+                <tr style="background:#f7f5ee; border-bottom:0.5px solid #e8e4da;">
+                  <td style="padding:14px 16px; color:#2e2e2e;">피부 장벽 수치(TEWL)</td>
+                  <td style="padding:14px 16px; text-align:center; color:#6b6b6b;">
+                    [측정값 입력]
+                  </td>
+                  <td style="padding:14px 16px; text-align:center; color:#4a5e2f; font-weight:500;">
+                    [측정값 입력]
+                  </td>
+                  <td style="padding:14px 16px; text-align:center;">
+                    <span style="background:#EAF3DE; color:#27500A; padding:2px 10px;
+                                 border-radius:10px; font-weight:500; font-size:12px;">
+                      0%
+                    </span>
+                  </td>
+                </tr>
+                <tr style="background:#fff; border-bottom:0.5px solid #e8e4da;">
+                  <td style="padding:14px 16px; color:#2e2e2e;">피부 자극 반응 건수</td>
+                  <td style="padding:14px 16px; text-align:center; color:#6b6b6b;">—</td>
+                  <td style="padding:14px 16px; text-align:center; color:#4a5e2f; font-weight:500;">
+                    0건
+                  </td>
+                  <td style="padding:14px 16px; text-align:center;">
+                    <span style="background:#EAF3DE; color:#27500A; padding:2px 10px;
+                                 border-radius:10px; font-weight:500; font-size:12px;">
+                      이상 없음
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:11px;
+                      color:#6b6b6b; margin-top:10px; font-style:italic;">
+            * 위 수치는 [시험 기관명] 인체적용시험 결과입니다. ([시험 완료 연도])
+          </div>
+        </div>
+
+        <!-- Before / After 이미지 영역 -->
+        <div style="margin-bottom:48px;">
+          <div style="font-family:'Pretendard',sans-serif; font-size:15px;
+                      font-weight:500; color:#2e2e2e; margin-bottom:16px;">
+            Before / After
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;
+                      max-width:600px;">
+
+            <div style="border-radius:16px; overflow:hidden; background:#e8e4da;
+                        aspect-ratio:3/4; display:flex; flex-direction:column;
+                        align-items:center; justify-content:center; gap:8px;">
+              <div style="font-family:'Pretendard',sans-serif; font-size:11px;
+                          color:#6b6b6b; font-weight:500; letter-spacing:0.06em;">
+                BEFORE
+              </div>
+              <div style="font-family:'Pretendard',sans-serif; font-size:10px;
+                          color:#6b6b6b; opacity:0.7;">이미지 준비중</div>
+            </div>
+
+            <div style="border-radius:16px; overflow:hidden; background:#d8e8c0;
+                        aspect-ratio:3/4; display:flex; flex-direction:column;
+                        align-items:center; justify-content:center; gap:8px;">
+              <div style="font-family:'Pretendard',sans-serif; font-size:11px;
+                          color:#4a5e2f; font-weight:500; letter-spacing:0.06em;">
+                AFTER
+              </div>
+              <div style="font-family:'Pretendard',sans-serif; font-size:10px;
+                          color:#4a5e2f; opacity:0.7;">이미지 준비중</div>
+            </div>
+
+          </div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:11px;
+                      color:#6b6b6b; margin-top:10px; font-style:italic;">
+            * 실제 제품 이미지가 준비되면 위 영역에 업로드하세요.
+              이미지 교체는 img src 경로만 수정하면 됩니다.
+          </div>
+        </div>
+
+        <!-- 인증 마크 영역 -->
+        <div style="display:flex; flex-wrap:wrap; gap:12px;">
+          <div style="border:0.5px solid #c8d4b0; border-radius:12px; padding:10px 16px;
+                      background:#fff; display:flex; align-items:center; gap:8px;">
+            <div style="width:24px; height:24px; border-radius:50%; background:#EAF3DE;
+                        display:flex; align-items:center; justify-content:center;
+                        font-size:10px; color:#27500A; font-weight:500;">G1</div>
+            <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#2e2e2e;">
+              EWG Green Grade 1
+            </span>
+          </div>
+          <div style="border:0.5px solid #c8d4b0; border-radius:12px; padding:10px 16px;
+                      background:#fff; display:flex; align-items:center; gap:8px;">
+            <div style="width:24px; height:24px; border-radius:50%; background:#EAF3DE;
+                        display:flex; align-items:center; justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 7L5.5 10.5L12 4" stroke="#27500A" stroke-width="1.5"
+                      stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#2e2e2e;">
+              주름개선 기능성 인증
+            </span>
+          </div>
+          <div style="border:0.5px solid #c8d4b0; border-radius:12px; padding:10px 16px;
+                      background:#fff; display:flex; align-items:center; gap:8px;">
+            <div style="width:24px; height:24px; border-radius:50%; background:#EAF3DE;
+                        display:flex; align-items:center; justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 7L5.5 10.5L12 4" stroke="#27500A" stroke-width="1.5"
+                      stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span style="font-family:'Pretendard',sans-serif; font-size:12px; color:#2e2e2e;">
+              미백 기능성 인증
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 섹션 4 — 다른 제품 보기 (크로스셀) -->
+    <section style="padding:80px 0; background:#f7f5ee;">
+      <div style="max-width:1200px; margin:0 auto; padding:0 48px;">
+
+        <div style="font-family:'Pretendard',sans-serif; font-size:15px;
+                    font-weight:500; color:#2e2e2e; margin-bottom:24px;">
+          다른 단계 제품
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+                    gap:16px;">
+
+          <a href="/product-reset-mist.html"
+             style="border:0.5px solid #c8d4b0; border-radius:16px; padding:20px;
+                    background:#fff; text-decoration:none; display:block;
+                    transition:border-color .15s, transform .1s;"
+             onmouseover="this.style.borderColor='#4a5e2f';this.style.transform='translateY(-2px)'"
+             onmouseout="this.style.borderColor='#c8d4b0';this.style.transform='translateY(0)'">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px;
+                        color:#7a9a3f; font-weight:500; margin-bottom:6px;">
+              Step 01 →
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:16px;
+                        font-weight:500; color:#2e2e2e; margin-bottom:4px;">
+              Reset Mist
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:12px;
+                        color:#6b6b6b;">
+              칙! — 유수분 최적 밸런싱
+            </div>
+          </a>
+
+          <a href="/product-restore-serum.html"
+             style="border:0.5px solid #c8d4b0; border-radius:16px; padding:20px;
+                    background:#fff; text-decoration:none; display:block;
+                    transition:border-color .15s, transform .1s;"
+             onmouseover="this.style.borderColor='#4a5e2f';this.style.transform='translateY(-2px)'"
+             onmouseout="this.style.borderColor='#c8d4b0';this.style.transform='translateY(0)'">
+            <div style="font-family:'Pretendard',sans-serif; font-size:11px;
+                        color:#7a9a3f; font-weight:500; margin-bottom:6px;">
+              Step 02 →
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:16px;
+                        font-weight:500; color:#2e2e2e; margin-bottom:4px;">
+              Restore Serum
+            </div>
+            <div style="font-family:'Pretendard',sans-serif; font-size:12px;
+                        color:#6b6b6b;">
+              톡! — 촘촘히 채워주는 수분 밀도
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+
+  <!-- 플로팅 바 모달 -->
+  <div id="floating-bar"
+    role="complementary" aria-label="제품 구매 바"
+    style="position:sticky; bottom:0; left:0; right:0;
+           background:rgba(242,240,232,0.96); backdrop-filter:blur(16px);
+           border-top:0.5px solid #c8d4b0;
+           align-items:center; justify-content:space-between; gap:12px;
+           transform:translateY(100%); transition:transform 0.3s ease; z-index:100;">
+    <div>
+      <div id="float-product-name"
+        style="font-family:'Pretendard',sans-serif; font-size:12px;
+               font-weight:400; color:#6b6b6b;">Recover Cream Balm</div>
+      <div id="float-price"
+        style="font-family:'Pretendard',sans-serif; font-size:16px;
+               font-weight:500; color:#2e2e2e;">38,000원</div>
+    </div>
+    <button id="float-buy-btn"
+      style="display:flex; align-items:center; gap:6px;
+             padding:12px 20px; border-radius:12px;
+             background:#4a5e2f; border:none;
+             font-family:'Pretendard',sans-serif; font-size:14px;
+             font-weight:500; color:#ffffff; cursor:pointer;
+             white-space:nowrap; min-height:44px;
+             transition:background 0.15s, transform 0.1s;"
+      onclick="openSmartstore('recover-balm')">
+      네이버에서 구매하기
+    </button>
+  </div>
+
+  <!-- 브릿지 모달 -->
+  <div id="bridge-modal" role="dialog" aria-modal="true"
+    aria-label="네이버 스마트스토어로 이동합니다"
+    style="display:none; position:fixed; inset:0; z-index:9999;
+           background:rgba(242,240,232,0.96); backdrop-filter:blur(12px);
+           align-items:center; justify-content:center;">
+    <div style="text-align:center; padding:32px 24px;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:20px;
+                  font-weight:500; font-style:italic; color:#4a5e2f; margin-bottom:20px;">
+        GenYou
+      </div>
+      <p style="font-family:'Pretendard',sans-serif; font-size:15px;
+                font-weight:400; color:#2e2e2e; line-height:1.7; margin-bottom:20px;">
+        안전한 구매를 위해<br>네이버 스마트스토어로 이동합니다
+      </p>
+      <div style="width:200px; height:2px; background:#c8d4b0;
+                  border-radius:1px; margin:0 auto 20px; overflow:hidden;">
+        <div id="bridge-bar" style="height:100%; width:0%; background:#4a5e2f;
+             border-radius:1px; transition:width 0.8s ease-in-out;"></div>
+      </div>
+      <div style="font-family:'Pretendard',sans-serif; font-size:13px;
+                  color:#03C75A; font-weight:500;">N SmartStore</div>
+    </div>
+  </div>
+
+  <!-- 진단 모달 -->
+  <div id="diagnosis-modal"
+    style="display:none; position:fixed; inset:0; z-index:9999;
+           background:rgba(242,240,232,0.98); backdrop-filter:blur(16px);
+           align-items:center; justify-content:center; padding:20px;">
+    <div style="width:100%; max-width:420px; position:relative;">
+      <button onclick="closeDiagnosis()"
+        style="position:absolute; top:-40px; right:0; background:none; border:none;
+               font-size:24px; cursor:pointer; color:#6b6b6b; line-height:1;">✕</button>
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+        <span id="diag-step-label"
+          style="font-family:'Pretendard',sans-serif; font-size:12px; color:#6b6b6b;">
+          Step 1 / 3
+        </span>
+        <span id="diag-step-title"
+          style="font-family:'Pretendard',sans-serif; font-size:12px;
+                 color:#4a5e2f; font-weight:500;">지금 피부 상태</span>
+      </div>
+      <div style="height:3px; border-radius:2px; background:#c8d4b0;
+                  margin-bottom:24px; overflow:hidden;">
+        <div id="diag-bar"
+          style="height:100%; border-radius:2px; background:#4a5e2f;
+                 width:33%; transition:width 0.4s ease;"></div>
+      </div>
+      <div id="diag-question-area">
+        <div id="diag-q-main"
+          style="font-family:'Pretendard',sans-serif; font-size:20px;
+                 font-weight:500; color:#2e2e2e; line-height:1.4; margin-bottom:6px;">
+          지금 피부가 어떤가요?
+        </div>
+        <div id="diag-q-sub"
+          style="font-family:'Pretendard',sans-serif; font-size:13px;
+                 color:#6b6b6b; margin-bottom:20px;">
+          가장 가까운 것을 선택해주세요.
+        </div>
+        <div id="diag-options" style="display:flex; flex-direction:column; gap:10px;"></div>
+        <button id="diag-next-btn" onclick="diagNext()"
+          style="display:none; margin-top:20px; width:100%; padding:14px;
+                 border-radius:12px; background:#4a5e2f; color:#fff; border:none;
+                 font-family:'Pretendard',sans-serif; font-size:14px;
+                 font-weight:500; cursor:pointer;">다음 →</button>
+      </div>
+      <div id="diag-result-area" style="display:none;">
+        <div style="font-family:'Pretendard',sans-serif; font-size:20px;
+                    font-weight:500; color:#2e2e2e; margin-bottom:4px;">
+          오늘의 추천 루틴이에요
+        </div>
+        <div style="font-family:'Pretendard',sans-serif; font-size:13px;
+                    color:#6b6b6b; margin-bottom:20px;">
+          지금 상태라면 이 단계가 딱 맞아요.
+        </div>
+        <div id="diag-result-content"></div>
+        <div style="display:flex; gap:10px; margin-top:20px;">
+          <button onclick="goToProduct()"
+            style="flex:1; padding:14px; border-radius:12px; background:#4a5e2f;
+                   color:#fff; border:none; font-family:'Pretendard',sans-serif;
+                   font-size:13px; font-weight:500; cursor:pointer;">
+            제품 자세히 보기 →
+          </button>
+          <button onclick="diagRestart()"
+            style="padding:14px 16px; border-radius:12px;
+                   border:0.5px solid #c8d4b0; background:transparent;
+                   font-family:'Pretendard',sans-serif; font-size:13px;
+                   color:#6b6b6b; cursor:pointer;">
+            다시 진단
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  const diagSteps = [
+    {
+      label:'Step 1 / 3', title:'지금 피부 상태',
+      q:'지금 피부가 어떤가요?', sub:'가장 가까운 것을 선택해주세요.',
+      opts:['세안 후 당기고 뻑뻑해요','갑자기 예민해지고 빨개졌어요',
+            '속은 건조한데 겉은 번들거려요','시술·수술 후 자극받은 상태예요']
+    },
+    {
+      label:'Step 2 / 3', title:'루틴 습관',
+      q:'지금 스킨케어 루틴이 어떻게 되나요?', sub:'솔직하게 골라주세요.',
+      opts:['5단계 이상 쓰고 있어요','3단계 정도예요',
+            '거의 아무것도 안 해요','최대한 줄이고 싶어요']
+    },
+    {
+      label:'Step 3 / 3', title:'케어 목표',
+      q:'지금 가장 원하는 것이 뭔가요?', sub:'하나만 골라주세요.',
+      opts:['일단 피부를 진정시키고 싶어요','촉촉하게 오래 유지하고 싶어요',
+            '최대한 간단하게 관리하고 싶어요','밤 사이 회복에 집중하고 싶어요']
+    }
+  ];
+
+  const diagRec = {
+    0: { title:'Reset Mist만으로 충분합니다',
+         products:['Reset Mist'], msg:'오늘은 여기서 멈추세요. 피부가 스스로 합니다.',
+         anchor:'#reset-mist' },
+    1: { title:'Reset + Restore 추천',
+         products:['Reset Mist','Restore Serum'],
+         msg:'예민한 날에는 Recover Cream Balm은 건너뛰어도 됩니다.',
+         anchor:'#reset-mist' },
+    2: { title:'Restore + Recover 추천',
+         products:['Restore Serum','Recover Cream Balm'],
+         msg:'수분 밀도를 채우고 보호막으로 마무리하세요.',
+         anchor:'#restore-serum' },
+    3: { title:'Full Routine 추천',
+         products:['Reset Mist','Restore Serum','Recover Cream Balm'],
+         msg:'지금처럼 자극받은 날에는 세 단계 모두가 필요합니다.',
+         anchor:'#reset-mist' }
+  };
+
+  let diagCur=0, diagAnswers=[], diagSelected=-1, diagResultAnchor='#recover-balm';
+
+  function openDiagnosis(){
+    diagCur=0; diagAnswers=[]; diagSelected=-1;
+    const modal=document.getElementById('diagnosis-modal');
+    modal.style.display='flex';
+    document.body.style.overflow='hidden';
+    diagRender();
+    if(typeof gtag!=='undefined') gtag('event','diagnosis_start');
+  }
+
+  function closeDiagnosis(){
+    document.getElementById('diagnosis-modal').style.display='none';
+    document.body.style.overflow='';
+  }
+
+  function diagSelectOpt(idx){
+    diagSelected=idx;
+    document.querySelectorAll('.diag-opt').forEach((b,i)=>{
+      b.style.borderColor = i===idx ? '#4a5e2f' : '#c8d4b0';
+      b.style.background  = i===idx ? '#e8f0d8' : '#f2f0e8';
+      b.style.fontWeight  = i===idx ? '500'     : '400';
+    });
+    document.getElementById('diag-next-btn').style.display='block';
+  }
+
+  function diagNext(){
+    if(diagSelected<0) return;
+    diagAnswers.push(diagSelected);
+    if(typeof gtag!=='undefined') gtag('event','diagnosis_step',{step:diagCur+1});
+    diagCur++;
+    if(diagCur>=diagSteps.length){ diagShowResult(); return; }
+    diagSelected=-1;
+    diagRender();
+  }
+
+  function diagRender(){
+    const s=diagSteps[diagCur];
+    document.getElementById('diag-step-label').textContent=s.label;
+    document.getElementById('diag-step-title').textContent=s.title;
+    document.getElementById('diag-bar').style.width=((diagCur+1)/3*100)+'%';
+    document.getElementById('diag-q-main').textContent=s.q;
+    document.getElementById('diag-q-sub').textContent=s.sub;
+    document.getElementById('diag-next-btn').style.display='none';
+    document.getElementById('diag-options').innerHTML=s.opts.map((o,i)=>
+      `<button class="diag-opt" onclick="diagSelectOpt(${i})"
+        style="border:0.5px solid #c8d4b0; border-radius:10px; padding:13px 16px;
+               background:#f2f0e8; font-family:'Pretendard',sans-serif;
+               font-size:13px; font-weight:400; color:#2e2e2e; cursor:pointer;
+               text-align:left; width:100%; transition:all 0.15s;
+               box-shadow:2px 2px 6px rgba(0,0,0,0.05),-2px -2px 6px rgba(255,255,255,0.7);">
+        ${o}</button>`
+    ).join('');
+    document.getElementById('diag-question-area').style.display='block';
+    document.getElementById('diag-result-area').style.display='none';
+  }
+
+  function diagShowResult(){
+    const rec=diagRec[diagAnswers[0]] || diagRec[0];
+    diagResultAnchor=rec.anchor;
+    document.getElementById('diag-bar').style.width='100%';
+    document.getElementById('diag-question-area').style.display='none';
+    document.getElementById('diag-result-area').style.display='block';
+    document.getElementById('diag-result-content').innerHTML=`
+      <div style="border:0.5px solid #c8d4b0;border-radius:12px;padding:16px;
+                  background:#f7f5ee;margin-bottom:12px;">
+        <div style="font-family:'Pretendard',sans-serif;font-size:11px;color:#4a5e2f;
+                    font-weight:500;text-transform:uppercase;letter-spacing:0.05em;
+                    margin-bottom:10px;">${rec.title}</div>
+        ${rec.products.map(p=>`
+          <div style="border:0.5px solid #c8d4b0;border-radius:10px;padding:10px 14px;
+                      background:#fff;margin:6px 0;display:flex;justify-content:space-between;
+                      align-items:center;">
+            <div style="font-family:'Pretendard',sans-serif;font-size:13px;
+                        font-weight:500;color:#2e2e2e;">${p}</div>
+            <span style="font-size:10px;padding:2px 8px;border-radius:10px;
+                         background:#EAF3DE;color:#27500A;font-weight:500;">추천</span>
+          </div>`).join('')}
+      </div>
+      <div style="background:#f2f0e8;border-radius:10px;padding:12px;
+                  font-family:'Pretendard',sans-serif;font-size:12px;
+                  color:#6b6b6b;line-height:1.6;border-left:2px solid #7a9a3f;">
+        ${rec.msg}
+      </div>`;
+    if(typeof gtag!=='undefined') gtag('event','diagnosis_complete',{result:rec.title});
+  }
+
+  function diagRestart(){
+    diagCur=0; diagAnswers=[]; diagSelected=-1;
+    diagRender();
+  }
+
+  function goToProduct(){
+    closeDiagnosis();
+    window.location.href='./product.html'+diagResultAnchor;
+  }
+
+  /* ESC 키로 모달 닫기 */
+  document.addEventListener('keydown', e=>{
+    if(e.key==='Escape') closeDiagnosis();
+  });
+  </script>
+</body>
+</html>
