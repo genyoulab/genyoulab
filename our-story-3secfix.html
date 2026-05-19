@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>3SecFix™ & Ingredient — 성분과 원칙 | GenYou Lab</title>
+<meta name="description"
+  content="3초면 충분합니다. GenYou 3SecFix™ 시스템의 원리와 핵심 성분 — 올리브 워터, Super Centella, 카밍 허브 콤플렉스를 알아보세요.">
+<meta property="og:title" content="3SecFix™ & Ingredient | GenYou Lab">
+<meta property="og:description" content="성분을 줄이고, 단계를 줄이고, 시간을 줄였습니다. 오직 피부가 필요한 만큼만.">
+<meta property="og:image" content="/assets/og-image.png">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./src/styles/tokens.css">
+  <link rel="stylesheet" href="./src/styles/typography.css">
+  <link rel="stylesheet" href="./src/styles/pdp.css">
+  <style>
+    .community-item {
+      border-bottom: 1px solid var(--color-muted);
+    }
+    .community-header {
+      padding: 20px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--color-primary);
+    }
+    .community-content {
+      padding: 0 0 20px 0;
+      display: none;
+      color: var(--color-text-secondary);
+    }
+    .counter-wrap {
+      text-align: center;
+      margin: 80px 0;
+    }
+    .counter-num {
+      font-size: clamp(60px, 10vw, 120px);
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+  </style>
+  <meta property="og:type" content="website">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVR7NZR8MW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DVR7NZR8MW');
+  </script>
+<style>
+/* Pretendard 폰트 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+/* ── GNB 기본 ── */
+#gnb {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(242,240,232,0.92);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid #c8d4b0;
+  height: 64px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 0 48px; box-sizing: border-box;
+}
+.gnb-logo {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 20px; font-weight: 500; font-style: italic;
+  color: #4a5e2f; text-decoration: none; flex-shrink: 0;
+}
+/* ── PC 메뉴 ── */
+.gnb-pc-menu {
+  display: flex; align-items: center; gap: 2px;
+}
+.gnb-link {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 13px; font-weight: 400; letter-spacing: 0.05em;
+  color: #2e2e2e; background: none; border: none;
+  padding: 8px 14px; border-radius: 8px; cursor: pointer;
+  transition: color .15s, background .15s; white-space: nowrap;
+}
+.gnb-link:hover { color: #4a5e2f; background: rgba(74,94,47,0.06); }
+/* ── 드롭다운 ── */
+.gnb-drop-wrap { position: relative; }
+.gnb-dropdown {
+  position: absolute; top: calc(100% + 10px); left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: rgba(242,240,232,0.98);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 0.5px solid #c8d4b0; border-radius: 16px;
+  min-width: 220px; padding: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  opacity: 0; visibility: hidden;
+  transition: opacity .2s, transform .2s, visibility .2s;
+  z-index: 100;
+}
+.gnb-drop-wrap:hover .gnb-dropdown {
+  opacity: 1; visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.gnb-drop-item {
+  display: flex; flex-direction: column;
+  padding: 10px 14px; border-radius: 10px;
+  text-decoration: none; color: #2e2e2e;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 13px; font-weight: 500;
+  transition: background .15s;
+}
+.gnb-drop-item:hover { background: #EAF3DE; color: #27500A; }
+.gnb-drop-sub {
+  font-size: 10px; font-weight: 400; color: #6b6b6b;
+  margin-top: 2px;
+}
+.gnb-drop-item:hover .gnb-drop-sub { color: #4a5e2f; }
+.gnb-drop-divider { height: 0.5px; background: #e8e4da; margin: 4px 14px; }
+/* ── 삼단바 ── */
+.gnb-hamburger {
+  display: flex; flex-direction: column;
+  gap: 5px; background: none; border: none;
+  cursor: pointer; padding: 6px; flex-shrink: 0;
+}
+.gnb-hamburger span {
+  display: block; width: 22px; height: 1.5px;
+  background: #2e2e2e; border-radius: 1px;
+  transition: all .2s;
+}
+.gnb-hamburger:hover span { background: #4a5e2f; }
+/* ── 유틸리티 드로어 ── */
+#util-drawer {
+  display: none; position: fixed; inset: 0;
+  z-index: 2000; background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+}
+#util-drawer.open { display: block; }
+.util-inner {
+  position: absolute; top: 0; right: 0;
+  width: min(360px, 92vw); height: 100%;
+  background: #f2f0e8; overflow-y: auto;
+  padding: 0 0 40px; box-shadow: -8px 0 32px rgba(0,0,0,0.12);
+}
+.util-header {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px; border-bottom: 0.5px solid #e8e4da;
+}
+.util-close {
+  background: none; border: none; cursor: pointer;
+  font-size: 22px; color: #6b6b6b; padding: 4px; line-height: 1;
+}
+.util-links { padding: 16px 16px 8px; }
+.util-link {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 12px; border-radius: 12px;
+  text-decoration: none; color: #2e2e2e;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px; font-weight: 500;
+  transition: background .15s; margin-bottom: 4px;
+}
+.util-link:hover { background: #EAF3DE; color: #27500A; }
+.util-icon { width: 36px; height: 36px; border-radius: 10px;
+  background: #f7f5ee; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; }
+.util-link-text { flex: 1; }
+.util-arrow { font-size: 14px; color: #c8d4b0; }
+.util-link:hover .util-arrow { color: #4a5e2f; }
+.util-divider { height: 0.5px; background: #e8e4da; margin: 8px 24px; }
+/* ── 모바일 전용 GNB 내비 ── */
+.util-nav-mobile { padding: 8px 24px; display: none; }
+.util-nav-section { margin-bottom: 20px; }
+.util-nav-title {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+  color: #4a5e2f; text-transform: uppercase;
+  margin-bottom: 8px; padding: 0 4px;
+}
+.util-nav-section a {
+  display: block; padding: 9px 4px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px; color: #2e2e2e; text-decoration: none;
+  border-bottom: 0.5px solid #ede9e0;
+  transition: color .15s;
+}
+.util-nav-section a:hover { color: #4a5e2f; }
+/* ── 반응형 ── */
+@media (max-width: 767px) {
+  #gnb { padding: 0 20px; }
+  .gnb-pc-menu { display: none !important; }
+  .util-nav-mobile { display: block; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #gnb { padding: 0 32px; }
+  .gnb-link { font-size: 12px; padding: 8px 10px; }
+}
+</style>
+</head>
+<body>
+    <!-- ===== GNB START ===== -->
+<nav id="gnb">
+  <!-- 로고 -->
+  <a href="/index.html" class="gnb-logo">GenYou</a>
+  <!-- PC 4개 메뉴 -->
+  <div class="gnb-pc-menu">
+    <!-- OUR STORY -->
+    <div class="gnb-drop-wrap">
+      <button class="gnb-link gnb-drop-btn">OUR STORY</button>
+      <div class="gnb-dropdown">
+        <a href="/our-story-brand.html" class="gnb-drop-item">
+          Brand Story<span class="gnb-drop-sub">젠유랩의 시작</span>
+        </a>
+        <a href="/our-story-3secfix.html" class="gnb-drop-item">
+          3SecFix™<span class="gnb-drop-sub">성분과 원칙</span>
+        </a>
+        <a href="/our-story-philosophy.html" class="gnb-drop-item">
+          Philosophy<span class="gnb-drop-sub">내버려 두는 것의 미학</span>
+        </a>
+      </div>
+    </div>
+    <!-- SHOP -->
+    <div class="gnb-drop-wrap">
+      <button class="gnb-link gnb-drop-btn">SHOP</button>
+      <div class="gnb-dropdown">
+        <a href="/product.html" class="gnb-drop-item">
+          전체 제품 보기<span class="gnb-drop-sub">3SecFix™ 라인업</span>
+        </a>
+        <div class="gnb-drop-divider"></div>
+        <a href="/product-reset-mist.html" class="gnb-drop-item">
+          Reset Reset Veil Toner<span class="gnb-drop-sub">칙! — 유수분 밸런싱</span>
+        </a>
+        <a href="/product-restore-serum.html" class="gnb-drop-item">
+          Restore Serum<span class="gnb-drop-sub">톡! — 수분 밀도</span>
+        </a>
+        <a href="/product-recover-balm.html" class="gnb-drop-item">
+          Recover Cream Balm<span class="gnb-drop-sub">쓱! — 마지막 보호막</span>
+        </a>
+      </div>
+    </div>
+    <!-- EXPERIENCE -->
+    <div class="gnb-drop-wrap">
+      <button class="gnb-link gnb-drop-btn">EXPERIENCE</button>
+      <div class="gnb-dropdown">
+        <a href="/experience-review.html" class="gnb-drop-item">
+          Review<span class="gnb-drop-sub">실제 후기 모음</span>
+        </a>
+        <a href="/experience-sns.html" class="gnb-drop-item">
+          SNS<span class="gnb-drop-sub">인스타그램 · 유튜브</span>
+        </a>
+        <a href="/experience-event.html" class="gnb-drop-item">
+          Event<span class="gnb-drop-sub">진행중인 이벤트</span>
+        </a>
+      </div>
+    </div>
+    <!-- SUPPORT -->
+    <div class="gnb-drop-wrap">
+      <button class="gnb-link gnb-drop-btn">SUPPORT</button>
+      <div class="gnb-dropdown">
+        <a href="/support-faq.html" class="gnb-drop-item">
+          FAQ<span class="gnb-drop-sub">자주 묻는 질문</span>
+        </a>
+        <a href="/support-inquiry.html" class="gnb-drop-item">
+          1:1 Inquiry<span class="gnb-drop-sub">개인 문의</span>
+        </a>
+        <a href="/career.html" class="gnb-drop-item">
+          Join Us<span class="gnb-drop-sub">함께할 사람을 찾습니다</span>
+        </a>
+      </div>
+    </div>
+  </div><!-- /gnb-pc-menu -->
+  <!-- 우측: 삼단바 버튼 하나 -->
+  <button class="gnb-hamburger" onclick="openUtilMenu()" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<!-- ===== 유틸리티 드로어 (삼단바 클릭 시) ===== -->
+<div id="util-drawer">
+  <div class="util-inner">
+    <div class="util-header">
+      <a href="/index.html" class="gnb-logo" style="color:#4a5e2f">GenYou</a>
+      <button onclick="closeUtilMenu()" class="util-close">✕</button>
+    </div>
+    <!-- 유틸리티 링크 (Login, Join, Cart, Mypage) -->
+    <div class="util-links">
+      <a href="/login.html" class="util-link">
+        <span class="util-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="7" r="3.5" stroke="#2e2e2e" stroke-width="1.2"/>
+            <path d="M3 17c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="#2e2e2e" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="util-link-text">Login</span>
+        <span class="util-arrow">→</span>
+      </a>
+      <a href="/join.html" class="util-link">
+        <span class="util-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="7" r="3.5" stroke="#2e2e2e" stroke-width="1.2"/>
+            <path d="M3 17c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="#2e2e2e" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M16 4v4M14 6h4" stroke="#4a5e2f" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="util-link-text">Join Crew</span>
+        <span class="util-arrow">→</span>
+      </a>
+      <a href="/cart.html" class="util-link">
+        <span class="util-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 3h2l2.5 9h9l2-6H6" stroke="#2e2e2e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="16.5" r="1.2" fill="#2e2e2e"/>
+            <circle cx="14" cy="16.5" r="1.2" fill="#2e2e2e"/>
+          </svg>
+        </span>
+        <span class="util-link-text">Cart</span>
+        <span class="util-arrow">→</span>
+      </a>
+      <a href="/mypage.html" class="util-link">
+        <span class="util-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="3" y="3" width="14" height="14" rx="3" stroke="#2e2e2e" stroke-width="1.2"/>
+            <path d="M7 8h6M7 11h4" stroke="#2e2e2e" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="util-link-text">Mypage</span>
+        <span class="util-arrow">→</span>
+      </a>
+    </div>
+    <!-- 구분선 -->
+    <div class="util-divider"></div>
+    <!-- 모바일에서만: 4개 GNB 메뉴 -->
+    <div class="util-nav-mobile">
+      <div class="util-nav-section">
+        <div class="util-nav-title">OUR STORY</div>
+        <a href="/our-story-brand.html" onclick="closeUtilMenu()">Brand Story</a>
+        <a href="/our-story-3secfix.html" onclick="closeUtilMenu()">3SecFix™</a>
+        <a href="/our-story-philosophy.html" onclick="closeUtilMenu()">Philosophy</a>
+      </div>
+      <div class="util-nav-section">
+        <div class="util-nav-title">SHOP</div>
+        <a href="/product.html" onclick="closeUtilMenu()">전체 제품 보기</a>
+        <a href="/product-reset-mist.html" onclick="closeUtilMenu()">Reset Veil Toner</a>
+        <a href="/product-restore-serum.html" onclick="closeUtilMenu()">Restore Serum</a>
+        <a href="/product-recover-balm.html" onclick="closeUtilMenu()">Recover Cream Balm</a>
+      </div>
+      <div class="util-nav-section">
+        <div class="util-nav-title">EXPERIENCE</div>
+        <a href="/experience-review.html" onclick="closeUtilMenu()">Review</a>
+        <a href="/experience-sns.html" onclick="closeUtilMenu()">SNS</a>
+        <a href="/experience-event.html" onclick="closeUtilMenu()">Event</a>
+      </div>
+      <div class="util-nav-section">
+        <div class="util-nav-title">SUPPORT</div>
+        <a href="/support-faq.html" onclick="closeUtilMenu()">FAQ</a>
+        <a href="/support-inquiry.html" onclick="closeUtilMenu()">1:1 Inquiry</a>
+        <a href="/career.html" onclick="closeUtilMenu()">Join Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===== GNB END ===== -->
+  <main>
+<!-- 섹션 1 — 히어로 -->
+<section style="min-height:70vh; display:flex; align-items:center;
+  justify-content:center; padding:80px 48px; background:#f2f0e8; text-align:center;">
+  <div style="max-width:720px;">
+    <div style="font-family:'Pretendard',sans-serif; font-size:clamp(48px,8vw,96px);
+      font-weight:500; font-style:italic; color:#4a5e2f; line-height:1;
+      margin-bottom:20px;">3SecFix™</div>
+    <p style="font-family:'Pretendard',sans-serif; font-size:clamp(16px,2.5vw,20px);
+      color:#2e2e2e; font-weight:500; margin-bottom:12px;">
+      오직 피부가 필요한 만큼만.
+    </p>
+    <p style="font-family:'Pretendard',sans-serif; font-size:15px; color:#6b6b6b;
+      line-height:1.7;">
+      당신의 단계를 선택하고, 피부가 편안해지면 멈추세요.
+    </p>
+  </div>
+</section>
+
+<!-- 섹션 2 — 기존 스킨케어 vs GenYou 비교표 -->
+<section style="padding:100px 48px; background:#fff;">
+  <div style="max-width:900px; margin:0 auto; box-sizing:border-box;">
+
+    <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500;
+      color:#7a9a3f; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">
+      THE DIFFERENCE
+    </div>
+    <h2 style="font-family:'Pretendard',sans-serif; font-size:clamp(22px,3.5vw,36px);
+      font-weight:500; color:#2e2e2e; margin-bottom:48px;">
+      피부를 바꾸려 하지 않습니다.<br>환경을 설계합니다.
+    </h2>
+
+    <!-- 비교 테이블 -->
+    <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+      <table style="width:100%; border-collapse:collapse; font-family:'Pretendard',sans-serif;
+        font-size:14px; min-width:480px;">
+        <thead>
+          <tr>
+            <th style="padding:14px 20px; background:#f2f0e8; text-align:left;
+              font-weight:500; color:#6b6b6b; width:20%; border-radius:12px 0 0 0;">
+              구분
+            </th>
+            <th style="padding:14px 20px; background:#f2f0e8; text-align:center;
+              font-weight:500; color:#6b6b6b;">
+              기존 스킨케어
+            </th>
+            <th style="padding:14px 20px; background:#4a5e2f; text-align:center;
+              font-weight:500; color:#fff; border-radius:0 12px 0 0;">
+              GenYou 생태계
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:0.5px solid #e8e4da;">
+            <td style="padding:16px 20px; font-weight:500; color:#2e2e2e;">전부적</td>
+            <td style="padding:16px 20px; text-align:center; color:#6b6b6b;">끊임없이 성분을 더하기</td>
+            <td style="padding:16px 20px; text-align:center; color:#27500A;
+              background:#f4f8ed; font-weight:500;">불필요한 단계를 멈추기</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid #e8e4da; background:#fafafa;">
+            <td style="padding:16px 20px; font-weight:500; color:#2e2e2e;">베이스</td>
+            <td style="padding:16px 20px; text-align:center; color:#6b6b6b;">정제수</td>
+            <td style="padding:16px 20px; text-align:center; color:#27500A;
+              background:#f4f8ed; font-weight:500;">딥 보습 올리브 워터</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid #e8e4da;">
+            <td style="padding:16px 20px; font-weight:500; color:#2e2e2e;">작용 방식</td>
+            <td style="padding:16px 20px; text-align:center; color:#6b6b6b;">인위적인 흡수 강요</td>
+            <td style="padding:16px 20px; text-align:center; color:#27500A;
+              background:#f4f8ed; font-weight:500;">3초 만의 자연스러운 수용</td>
+          </tr>
+          <tr>
+            <td style="padding:16px 20px; font-weight:500; color:#2e2e2e; border-radius:0 0 0 12px;">보호막 형성</td>
+            <td style="padding:16px 20px; text-align:center; color:#6b6b6b;">화학적 계면활성제 혼합</td>
+            <td style="padding:16px 20px; text-align:center; color:#27500A;
+              background:#f4f8ed; font-weight:500; border-radius:0 0 12px 0;">
+              수분/유분 순차적 분리 보호막
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-family:'Pretendard',sans-serif; font-size:13px; color:#7a9a3f;
+      text-align:center; margin-top:20px; font-style:italic;">
+      🌿 피부는 치료 대상이 아니라 스스로 회복하는 생태계입니다
+    </p>
+  </div>
+</section>
+
+<!-- 섹션 3 — 3단계 시스템 (타임라인) -->
+<section style="padding:100px 48px; background:#f2f0e8;">
+  <div style="max-width:1000px; margin:0 auto; box-sizing:border-box;">
+
+    <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500;
+      color:#7a9a3f; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">
+      THE SYSTEM
+    </div>
+    <h2 style="font-family:'Pretendard',sans-serif; font-size:clamp(22px,3.5vw,36px);
+      font-weight:500; color:#2e2e2e; margin-bottom:16px;">
+      3SecFix™ : 당신이 멈추는 기준
+    </h2>
+    <p style="font-family:'Pretendard',sans-serif; font-size:15px; color:#6b6b6b;
+      margin-bottom:56px;">
+      각 단계는 3초면 충분합니다. 문지르지 마세요. 흡수는 피부가 스스로 합니다.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:24px;">
+
+      <!-- Step 01 -->
+      <a href="/product-reset-mist.html" style="text-decoration:none;">
+        <div style="border-radius:20px; padding:36px 28px; background:#fff;
+          border:0.5px solid #c8d4b0; transition:transform .2s, box-shadow .2s;
+          cursor:pointer;"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(74,94,47,0.12)'"
+          onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+          <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500;
+            color:#7a9a3f; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">
+            Step 01
+          </div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:24px; font-weight:500;
+            color:#2e2e2e; margin-bottom:4px;">Reset Veil Toner</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:13px; color:#7a9a3f;
+            margin-bottom:16px;">세안 직후 / 예민한 날</div>
+          <div style="height:0.5px; background:#e8e4da; margin-bottom:16px;"></div>
+          <p style="font-family:'Pretendard',sans-serif; font-size:13px; color:#6b6b6b;
+            line-height:1.7;">
+            자극 받은 피부를 멈추게 하는 첫 단계.<br>오늘은 여기서 끝내도 충분합니다.
+          </p>
+          <div style="margin-top:16px; font-family:'Pretendard',sans-serif; font-size:12px;
+            color:#4a5e2f; font-weight:500;">자세히 보기 →</div>
+        </div>
+      </a>
+
+      <!-- Step 02 -->
+      <a href="/product-restore-serum.html" style="text-decoration:none;">
+        <div style="border-radius:20px; padding:36px 28px; background:#EAF3DE;
+          border:0.5px solid #7a9a3f; transition:transform .2s, box-shadow .2s;"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(74,94,47,0.15)'"
+          onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+          <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500;
+            color:#4a5e2f; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">
+            Step 02
+          </div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:24px; font-weight:500;
+            color:#27500A; margin-bottom:4px;">Restore Serum</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:13px; color:#4a5e2f;
+            margin-bottom:16px;">속당김 / 컨디션 흔들릴 때</div>
+          <div style="height:0.5px; background:#c8d4b0; margin-bottom:16px;"></div>
+          <p style="font-family:'Pretendard',sans-serif; font-size:13px; color:#3B6D11;
+            line-height:1.7;">
+            피부 균형을 다시 세우는 핵심 단계.<br>오늘은 여기까지만.
+          </p>
+          <div style="margin-top:16px; font-family:'Pretendard',sans-serif; font-size:12px;
+            color:#27500A; font-weight:500;">자세히 보기 →</div>
+        </div>
+      </a>
+
+      <!-- Step 03 -->
+      <a href="/product-recover-balm.html" style="text-decoration:none;">
+        <div style="border-radius:20px; padding:36px 28px; background:#fff;
+          border:0.5px solid #c8d4b0; transition:transform .2s, box-shadow .2s;"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(74,94,47,0.12)'"
+          onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+          <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500;
+            color:#7a9a3f; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">
+            Step 03
+          </div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:24px; font-weight:500;
+            color:#2e2e2e; margin-bottom:4px;">Recover Cream Balm</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:13px; color:#7a9a3f;
+            margin-bottom:16px;">밤 루틴 / 자극·시술 후</div>
+          <div style="height:0.5px; background:#e8e4da; margin-bottom:16px;"></div>
+          <p style="font-family:'Pretendard',sans-serif; font-size:13px; color:#6b6b6b;
+            line-height:1.7;">
+            수분 유지가 필요한 날에만 덮어주는<br>마지막 보호막.
+          </p>
+          <div style="margin-top:16px; font-family:'Pretendard',sans-serif; font-size:12px;
+            color:#4a5e2f; font-weight:500;">자세히 보기 →</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- 섹션 4 — 핵심 성분 (수분·유분 보호막 + 올리브워터 + 아로마) -->
+<section style="padding:100px 48px; background:#fff;">
+  <div style="max-width:1000px; margin:0 auto; box-sizing:border-box;">
+
+    <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:500;
+      color:#7a9a3f; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">
+      KEY INGREDIENTS
+    </div>
+    <h2 style="font-family:'Pretendard',sans-serif; font-size:clamp(22px,3.5vw,36px);
+      font-weight:500; color:#2e2e2e; margin-bottom:48px;">
+      베이스부터 향기까지,<br>완전한 휴식의 설계
+    </h2>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-bottom:48px;">
+
+      <!-- 올리브 워터 -->
+      <div style="border-radius:20px; padding:36px 28px; background:#f4f8ed;
+        border:0.5px solid #c8d4b0;">
+        <div style="font-family:'Pretendard',sans-serif; font-size:16px; font-weight:600;
+          color:#27500A; margin-bottom:16px;">정제수(물) 대신 올리브 워터</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#4a5e2f; font-size:14px;">✓</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:13px;
+              color:#3B6D11;">강력한 항산화 보호</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#4a5e2f; font-size:14px;">✓</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:13px;
+              color:#3B6D11;">UV 손상 완화</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#4a5e2f; font-size:14px;">✓</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:13px;
+              color:#3B6D11;">딥 보습 및 장벽 강화</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 천연 아로마 -->
+      <div style="border-radius:20px; padding:36px 28px; background:#f7f5ee;
+        border:0.5px solid #c8d4b0;">
+        <div style="font-family:'Pretendard',sans-serif; font-size:16px; font-weight:600;
+          color:#2e2e2e; margin-bottom:16px;">인공향료 대신 천연 아로마 릴렉싱</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#4a5e2f; font-size:14px;">✓</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:13px; color:#6b6b6b;">
+              라벤더 — 스트레스 완화, 숙면 유도
+            </span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#4a5e2f; font-size:14px;">✓</span>
+            <span style="font-family:'Pretendard',sans-serif; font-size:13px; color:#6b6b6b;">
+              일랑일랑 — 피로감 완화, 리프레시
+            </span>
+          </div>
+          <div style="margin-top:8px; font-family:'Pretendard',sans-serif; font-size:12px;
+            color:#7a9a3f; font-style:italic;">
+            지친 피부와 마음이 잠시 쉴 시간을 제공합니다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 허브 성분 지도 -->
+    <div style="border-radius:20px; padding:36px; background:#f2f0e8;
+      border:0.5px solid #c8d4b0;">
+      <div style="font-family:'Pretendard',sans-serif; font-size:15px; font-weight:500;
+        color:#2e2e2e; text-align:center; margin-bottom:8px;">
+        Super Centella & 카밍 허브 콤플렉스
+      </div>
+      <div style="font-family:'Pretendard',sans-serif; font-size:12px; color:#7a9a3f;
+        text-align:center; margin-bottom:24px;">EWG Green Grade 1 인증</div>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+        <span style="padding:8px 16px; border-radius:20px; background:#fff;
+          border:0.5px solid #c8d4b0; font-family:'Pretendard',sans-serif;
+          font-size:13px; color:#2e2e2e;">슈퍼 센텔라</span>
+        <span style="padding:8px 16px; border-radius:20px; background:#fff;
+          border:0.5px solid #c8d4b0; font-family:'Pretendard',sans-serif;
+          font-size:13px; color:#2e2e2e;">호장근뿌리</span>
+        <span style="padding:8px 16px; border-radius:20px; background:#fff;
+          border:0.5px solid #c8d4b0; font-family:'Pretendard',sans-serif;
+          font-size:13px; color:#2e2e2e;">황금</span>
+        <span style="padding:8px 16px; border-radius:20px; background:#fff;
+          border:0.5px solid #c8d4b0; font-family:'Pretendard',sans-serif;
+          font-size:13px; color:#2e2e2e;">녹차</span>
+        <span style="padding:8px 16px; border-radius:20px; background:#fff;
+          border:0.5px solid #c8d4b0; font-family:'Pretendard',sans-serif;
+          font-size:13px; color:#2e2e2e;">감초뿌리</span>
+        <span style="padding:8px 16px; border-radius:20px; background:#fff;
+          border:0.5px solid #c8d4b0; font-family:'Pretendard',sans-serif;
+          font-size:13px; color:#2e2e2e;">마트리카리아</span>
+        <span style="padding:8px 16px; border-radius:20px; background:#fff;
+          border:0.5px solid #c8d4b0; font-family:'Pretendard',sans-serif;
+          font-size:13px; color:#2e2e2e;">로즈마리 잎</span>
+      </div>
+      <p style="font-family:'Pretendard',sans-serif; font-size:12px; color:#6b6b6b;
+        text-align:center; margin-top:20px; font-style:italic;">
+        모든 성분은 식물성 자극 완화 유효성분으로,<br>
+        피부에 최소한으로 개입하며 최대의 안정을 끌어냅니다.
+      </p>
+    </div>
+  </div>
+</section>
+</main>
+<script>
+(function() {
+  const el = document.getElementById('counter-years');
+  if (!el) return;
+
+  /* 이미 실행됐으면 중복 방지 */
+  let animated = false;
+
+  function animateCount(target, duration) {
+    if (animated) return;
+    animated = true;
+    const start = performance.now();
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      /* ease-out cubic */
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target; /* 최종값 정확히 고정 */
+    }
+    requestAnimationFrame(update);
+  }
+
+  /* Intersection Observer — 뷰포트 50% 진입 시 1회 실행 */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(18, 6000); /* 18년, 6.0초 */
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(el);
+})();
+
+
+// ── 유틸리티 드로어 ──
+function openUtilMenu() {
+  document.getElementById('util-drawer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeUtilMenu() {
+  document.getElementById('util-drawer').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// 드로어 배경 클릭 시 닫기
+document.getElementById('util-drawer').addEventListener('click', function(e) {
+  if (e.target === this) closeUtilMenu();
+});
+// ESC 키
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeUtilMenu();
+});
+// 현재 페이지 GNB 메뉴 active 표시
+(function() {
+  const path = location.pathname;
+  document.querySelectorAll('.gnb-drop-item').forEach(a => {
+    if (a.getAttribute('href') && path.includes(a.getAttribute('href').replace('/',''))) {
+      a.style.background = '#EAF3DE';
+      a.style.color = '#27500A';
+    }
+  });
+})();
+</script>
+</body>
+</html>

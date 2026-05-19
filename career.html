@@ -25,399 +25,329 @@
 /* Pretendard 폰트 */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
-/* GNB 공통 링크 */
+/* ── GNB 기본 ── */
+#gnb {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(242,240,232,0.92);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid #c8d4b0;
+  height: 64px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 0 48px; box-sizing: border-box;
+}
+.gnb-logo {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 20px; font-weight: 500; font-style: italic;
+  color: #4a5e2f; text-decoration: none; flex-shrink: 0;
+}
+
+/* ── PC 메뉴 ── */
+.gnb-pc-menu {
+  display: flex; align-items: center; gap: 2px;
+}
 .gnb-link {
   font-family: 'Pretendard', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #2e2e2e;
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  letter-spacing: 0.04em;
-  transition: color 0.15s, background 0.15s;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
+  font-size: 13px; font-weight: 400; letter-spacing: 0.05em;
+  color: #2e2e2e; background: none; border: none;
+  padding: 8px 14px; border-radius: 8px; cursor: pointer;
+  transition: color .15s, background .15s; white-space: nowrap;
 }
 .gnb-link:hover { color: #4a5e2f; background: rgba(74,94,47,0.06); }
-.gnb-link.active { color: #4a5e2f; font-weight: 500; }
 
-/* 드롭다운 래퍼 */
-.gnb-dropdown-wrap {
-  position: relative;
-}
-
-/* 드롭다운 화살표 회전 */
-.gnb-dropdown-wrap:hover .gnb-arrow {
-  transform: rotate(180deg);
-}
-
-/* 드롭다운 패널 */
+/* ── 드롭다운 ── */
+.gnb-drop-wrap { position: relative; }
 .gnb-dropdown {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(242,240,232,0.98);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 0.5px solid #c8d4b0;
-  border-radius: 16px;
-  min-width: 240px;
-  padding: 6px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
-  opacity: 0;
-  visibility: hidden;
+  position: absolute; top: calc(100% + 10px); left: 50%;
   transform: translateX(-50%) translateY(-6px);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  background: rgba(242,240,232,0.98);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 0.5px solid #c8d4b0; border-radius: 16px;
+  min-width: 220px; padding: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  opacity: 0; visibility: hidden;
+  transition: opacity .2s, transform .2s, visibility .2s;
   z-index: 100;
 }
-
-/* 드롭다운 호버 시 표시 */
-.gnb-dropdown-wrap:hover .gnb-dropdown {
-  opacity: 1;
-  visibility: visible;
+.gnb-drop-wrap:hover .gnb-dropdown {
+  opacity: 1; visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
-
-/* 드롭다운 항목 */
-.gnb-dropdown-item {
-  display: flex;
-  flex-direction: column;
-  padding: 10px 14px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #2e2e2e;
+.gnb-drop-item {
+  display: flex; flex-direction: column;
+  padding: 10px 14px; border-radius: 10px;
+  text-decoration: none; color: #2e2e2e;
   font-family: 'Pretendard', sans-serif;
-  font-size: 13px;
-  transition: background 0.15s;
+  font-size: 13px; font-weight: 500;
+  transition: background .15s;
 }
-.gnb-dropdown-item:hover { background: #EAF3DE; color: #27500A; }
-
-/* 드롭다운 서브텍스트 */
-.gnb-dropdown-sub {
-  font-size: 11px;
-  color: #6b6b6b;
+.gnb-drop-item:hover { background: #EAF3DE; color: #27500A; }
+.gnb-drop-sub {
+  font-size: 10px; font-weight: 400; color: #6b6b6b;
   margin-top: 2px;
-  font-weight: 400;
 }
-.gnb-dropdown-item:hover .gnb-dropdown-sub { color: #4a5e2f; }
+.gnb-drop-item:hover .gnb-drop-sub { color: #4a5e2f; }
+.gnb-drop-divider { height: 0.5px; background: #e8e4da; margin: 4px 14px; }
 
-/* 진단하기 버튼 */
-.gnb-cta-btn {
-  font-family: 'Pretendard', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  color: #fff;
-  background: #4a5e2f;
-  border: none;
-  border-radius: 24px;
-  padding: 8px 20px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.15s, transform 0.1s;
-}
-.gnb-cta-btn:hover { background: #3b4f24; }
-.gnb-cta-btn:active { transform: scale(0.97); }
-
-/* 햄버거 버튼 */
+/* ── 삼단바 ── */
 .gnb-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
+  display: flex; flex-direction: column;
+  gap: 5px; background: none; border: none;
+  cursor: pointer; padding: 6px; flex-shrink: 0;
 }
 .gnb-hamburger span {
-  display: block;
-  width: 22px;
-  height: 1.5px;
-  background: #2e2e2e;
-  border-radius: 1px;
-  transition: all 0.2s;
+  display: block; width: 22px; height: 1.5px;
+  background: #2e2e2e; border-radius: 1px;
+  transition: all .2s;
 }
+.gnb-hamburger:hover span { background: #4a5e2f; }
 
-/* 드로어 링크 */
-.drawer-link {
-  font-family: 'Pretendard', sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  color: #2e2e2e;
-  text-decoration: none;
-  padding: 14px 0;
-  border-bottom: 0.5px solid #e8e4da;
-  display: flex;
-  align-items: center;
+/* ── 유틸리티 드로어 ── */
+#util-drawer {
+  display: none; position: fixed; inset: 0;
+  z-index: 2000; background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+}
+#util-drawer.open { display: block; }
+.util-inner {
+  position: absolute; top: 0; right: 0;
+  width: min(360px, 92vw); height: 100%;
+  background: #f2f0e8; overflow-y: auto;
+  padding: 0 0 40px; box-shadow: -8px 0 32px rgba(0,0,0,0.12);
+}
+.util-header {
+  display: flex; align-items: center;
   justify-content: space-between;
-  background: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  transition: color 0.15s;
+  padding: 20px 24px; border-bottom: 0.5px solid #e8e4da;
 }
-.drawer-link:hover { color: #4a5e2f; }
-.drawer-toggle { border-bottom: 0.5px solid #e8e4da; }
-
-/* 드로어 하위 링크 */
-.drawer-sub-link {
+.util-close {
+  background: none; border: none; cursor: pointer;
+  font-size: 22px; color: #6b6b6b; padding: 4px; line-height: 1;
+}
+.util-links { padding: 16px 16px 8px; }
+.util-link {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 12px; border-radius: 12px;
+  text-decoration: none; color: #2e2e2e;
   font-family: 'Pretendard', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: #2e2e2e;
-  text-decoration: none;
-  padding: 14px 16px;
-  display: block;
-  transition: background 0.15s;
+  font-size: 15px; font-weight: 500;
+  transition: background .15s; margin-bottom: 4px;
 }
-.drawer-sub-link:hover { background: rgba(74,94,47,0.08); }
+.util-link:hover { background: #EAF3DE; color: #27500A; }
+.util-icon { width: 36px; height: 36px; border-radius: 10px;
+  background: #f7f5ee; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; }
+.util-link-text { flex: 1; }
+.util-arrow { font-size: 14px; color: #c8d4b0; }
+.util-link:hover .util-arrow { color: #4a5e2f; }
+.util-divider { height: 0.5px; background: #e8e4da; margin: 8px 24px; }
 
-/* 현재 페이지 active 표시 */
-.gnb-link.current-page { color: #4a5e2f; font-weight: 500; }
-.gnb-dropdown-item.current-page { background: #EAF3DE; color: #27500A; }
+/* ── 모바일 전용 GNB 내비 ── */
+.util-nav-mobile { padding: 8px 24px; display: none; }
+.util-nav-section { margin-bottom: 20px; }
+.util-nav-title {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+  color: #4a5e2f; text-transform: uppercase;
+  margin-bottom: 8px; padding: 0 4px;
+}
+.util-nav-section a {
+  display: block; padding: 9px 4px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px; color: #2e2e2e; text-decoration: none;
+  border-bottom: 0.5px solid #ede9e0;
+  transition: color .15s;
+}
+.util-nav-section a:hover { color: #4a5e2f; }
 
-/* 반응형 */
-@media (max-width: 639px) {
+/* ── 반응형 ── */
+@media (max-width: 767px) {
   #gnb { padding: 0 20px; }
   .gnb-pc-menu { display: none !important; }
-  .gnb-hamburger { display: flex; }
-  .gnb-cta-btn { display: none; }
+  .util-nav-mobile { display: block; }
 }
-@media (min-width: 640px) {
-  .gnb-hamburger { display: none; }
-  #mobile-drawer { display: none !important; }
-}
-@media (min-width: 640px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   #gnb { padding: 0 32px; }
-  .gnb-link { font-size: 13px; padding: 8px 10px; }
-  .gnb-cta-btn { padding: 8px 14px; font-size: 12px; }
+  .gnb-link { font-size: 12px; padding: 8px 10px; }
 }
 </style>
 
 </head>
 <body>
-    <!-- ===================== GNB START ===================== -->
-<nav id="gnb" style="
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(242,240,232,0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 0.5px solid #c8d4b0;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 48px;
-  box-sizing: border-box;
-">
-
+    <!-- ===== GNB START ===== -->
+<nav id="gnb">
   <!-- 로고 -->
-  <a href="/index.html" style="
-    font-family: 'Pretendard', sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    font-style: italic;
-    color: #4a5e2f;
-    text-decoration: none;
-    flex-shrink: 0;
-  ">GenYou</a>
+  <a href="/index.html" class="gnb-logo">GenYou</a>
 
-  <!-- PC 메뉴 -->
-  <div class="gnb-pc-menu" style="
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  ">
+  <!-- PC 4개 메뉴 -->
+  <div class="gnb-pc-menu">
 
-    <!-- BRAND -->
-    <a href="/brand.html" class="gnb-link">BRAND</a>
-
-    <!-- PRODUCT (드롭다운) -->
-    <div class="gnb-dropdown-wrap">
-      <a href="/product.html" class="gnb-link gnb-has-dropdown">
-        PRODUCT
-        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-             style="margin-left:3px; vertical-align:middle; transition:transform .2s;"
-             class="gnb-arrow">
-          <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor"
-                stroke-width="1.2" stroke-linecap="round"/>
-        </svg>
-      </a>
-
-      <!-- 드롭다운 패널 -->
+    <!-- OUR STORY -->
+    <div class="gnb-drop-wrap">
+      <button class="gnb-link gnb-drop-btn">OUR STORY</button>
       <div class="gnb-dropdown">
-        <div style="
-          font-family: 'Pretendard', sans-serif;
-          font-size: 10px;
-          font-weight: 500;
-          color: #7a9a3f;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          padding: 10px 14px 6px;
-        ">3SecFix™ 라인업</div>
-
-        <a href="/product.html" class="gnb-dropdown-item">
-          <span style="font-weight:500;">전체 제품 보기</span>
-          <span class="gnb-dropdown-sub">Reset Mist · Restore Serum · Recover Balm</span>
+        <a href="/our-story-brand.html" class="gnb-drop-item">
+          Brand Story<span class="gnb-drop-sub">젠유랩의 시작</span>
         </a>
-
-        <div style="height:0.5px; background:#e8e4da; margin:4px 14px;"></div>
-
-        <a href="/product-reset-mist.html" class="gnb-dropdown-item">
-          <span style="font-weight:500;">Reset Mist</span>
-          <span class="gnb-dropdown-sub">칙! — 유수분 최적 밸런싱</span>
+        <a href="/our-story-3secfix.html" class="gnb-drop-item">
+          3SecFix™<span class="gnb-drop-sub">성분과 원칙</span>
         </a>
-
-        <a href="/product-restore-serum.html" class="gnb-dropdown-item">
-          <span style="font-weight:500;">Restore Serum</span>
-          <span class="gnb-dropdown-sub">톡! — 촘촘히 채워주는 수분 밀도</span>
-        </a>
-
-        <a href="/product-recover-balm.html" class="gnb-dropdown-item">
-          <span style="font-weight:500;">Recover Cream Balm</span>
-          <span class="gnb-dropdown-sub">쓱! — 가볍지만 쫀쫀한 마지막 보호막</span>
+        <a href="/our-story-philosophy.html" class="gnb-drop-item">
+          Philosophy<span class="gnb-drop-sub">내버려 두는 것의 미학</span>
         </a>
       </div>
     </div>
 
-    <!-- COMMUNITY -->
-    <a href="/brand.html#community" class="gnb-link">COMMUNITY</a>
+    <!-- SHOP -->
+    <div class="gnb-drop-wrap">
+      <button class="gnb-link gnb-drop-btn">SHOP</button>
+      <div class="gnb-dropdown">
+        <a href="/product.html" class="gnb-drop-item">
+          전체 제품 보기<span class="gnb-drop-sub">3SecFix™ 라인업</span>
+        </a>
+        <div class="gnb-drop-divider"></div>
+        <a href="/product-reset-mist.html" class="gnb-drop-item">
+          Reset Veil Toner<span class="gnb-drop-sub">칙! — 유수분 밸런싱</span>
+        </a>
+        <a href="/product-restore-serum.html" class="gnb-drop-item">
+          Restore Serum<span class="gnb-drop-sub">톡! — 수분 밀도</span>
+        </a>
+        <a href="/product-recover-balm.html" class="gnb-drop-item">
+          Recover Cream Balm<span class="gnb-drop-sub">쓱! — 마지막 보호막</span>
+        </a>
+      </div>
+    </div>
 
-    <!-- CAREER -->
-    <a href="/career.html" class="gnb-link">CAREER</a>
+    <!-- EXPERIENCE -->
+    <div class="gnb-drop-wrap">
+      <button class="gnb-link gnb-drop-btn">EXPERIENCE</button>
+      <div class="gnb-dropdown">
+        <a href="/experience-review.html" class="gnb-drop-item">
+          Review<span class="gnb-drop-sub">실제 후기 모음</span>
+        </a>
+        <a href="/experience-sns.html" class="gnb-drop-item">
+          SNS<span class="gnb-drop-sub">인스타그램 · 유튜브</span>
+        </a>
+        <a href="/experience-event.html" class="gnb-drop-item">
+          Event<span class="gnb-drop-sub">진행중인 이벤트</span>
+        </a>
+      </div>
+    </div>
 
-  </div>
+    <!-- SUPPORT -->
+    <div class="gnb-drop-wrap">
+      <button class="gnb-link gnb-drop-btn">SUPPORT</button>
+      <div class="gnb-dropdown">
+        <a href="/support-faq.html" class="gnb-drop-item">
+          FAQ<span class="gnb-drop-sub">자주 묻는 질문</span>
+        </a>
+        <a href="/support-inquiry.html" class="gnb-drop-item">
+          1:1 Inquiry<span class="gnb-drop-sub">개인 문의</span>
+        </a>
+        <a href="/career.html" class="gnb-drop-item">
+          Join Us<span class="gnb-drop-sub">함께할 사람을 찾습니다</span>
+        </a>
+      </div>
+    </div>
 
-  <!-- 진단하기 버튼 + 햄버거 -->
-  <div style="display:flex; align-items:center; gap:12px; flex-shrink:0;">
-    <button onclick="openDiagnosis()" class="gnb-cta-btn"
-      aria-label="피부 진단 시작하기">
-      진단하기
-    </button>
-    <button class="gnb-hamburger" onclick="openMobileMenu()"
-      aria-label="메뉴 열기">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
+  </div><!-- /gnb-pc-menu -->
+
+  <!-- 우측: 삼단바 버튼 하나 -->
+  <button class="gnb-hamburger" onclick="openUtilMenu()" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </button>
 
 </nav>
 
-<!-- 모바일 드로어 -->
-<div id="mobile-drawer" style="
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  background: #f2f0e8;
-  flex-direction: column;
-  padding: 24px 24px 40px;
-  box-sizing: border-box;
-  overflow-y: auto;
-">
+<!-- ===== 유틸리티 드로어 (삼단바 클릭 시) ===== -->
+<div id="util-drawer">
+  <div class="util-inner">
+    <div class="util-header">
+      <a href="/index.html" class="gnb-logo" style="color:#4a5e2f">GenYou</a>
+      <button onclick="closeUtilMenu()" class="util-close">✕</button>
+    </div>
 
-  <!-- 드로어 헤더 -->
-  <div style="display:flex; justify-content:space-between; align-items:center;
-              margin-bottom:40px;">
-    <a href="/index.html" style="
-      font-family: 'Pretendard', sans-serif;
-      font-size: 20px; font-weight: 500;
-      font-style: italic; color: #4a5e2f;
-      text-decoration: none;">GenYou</a>
-    <button onclick="closeMobileMenu()" style="
-      background: none; border: none; cursor: pointer;
-      font-size: 24px; color: #6b6b6b; line-height: 1;
-      padding: 4px;">✕</button>
-  </div>
+    <!-- 유틸리티 링크 (Login, Join, Cart, Mypage) -->
+    <div class="util-links">
+      <a href="/login.html" class="util-link">
+        <span class="util-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="7" r="3.5" stroke="#2e2e2e" stroke-width="1.2"/>
+            <path d="M3 17c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="#2e2e2e" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="util-link-text">Login</span>
+        <span class="util-arrow">→</span>
+      </a>
+      <a href="/join.html" class="util-link">
+        <span class="util-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="7" r="3.5" stroke="#2e2e2e" stroke-width="1.2"/>
+            <path d="M3 17c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="#2e2e2e" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M16 4v4M14 6h4" stroke="#4a5e2f" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="util-link-text">Join Crew</span>
+        <span class="util-arrow">→</span>
+      </a>
+      <a href="/cart.html" class="util-link">
+        <span class="util-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 3h2l2.5 9h9l2-6H6" stroke="#2e2e2e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="16.5" r="1.2" fill="#2e2e2e"/>
+            <circle cx="14" cy="16.5" r="1.2" fill="#2e2e2e"/>
+          </svg>
+        </span>
+        <span class="util-link-text">Cart</span>
+        <span class="util-arrow">→</span>
+      </a>
+      <a href="/mypage.html" class="util-link">
+        <span class="util-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="3" y="3" width="14" height="14" rx="3" stroke="#2e2e2e" stroke-width="1.2"/>
+            <path d="M7 8h6M7 11h4" stroke="#2e2e2e" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="util-link-text">Mypage</span>
+        <span class="util-arrow">→</span>
+      </a>
+    </div>
 
-  <!-- 드로어 메뉴 목록 -->
-  <div style="display:flex; flex-direction:column; gap:0;">
+    <!-- 구분선 -->
+    <div class="util-divider"></div>
 
-    <a href="/brand.html" onclick="closeMobileMenu()"
-       class="drawer-link">BRAND</a>
-
-    <!-- PRODUCT 탭 (클릭으로 하위 펼침) -->
-    <div>
-      <button onclick="toggleProductMenu()" class="drawer-link drawer-toggle"
-        id="product-toggle">
-        PRODUCT
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-             id="product-arrow" style="transition:transform .25s;">
-          <path d="M3 5L7 9L11 5" stroke="#2e2e2e"
-                stroke-width="1.2" stroke-linecap="round"/>
-        </svg>
-      </button>
-
-      <!-- PRODUCT 하위 메뉴 -->
-      <div id="product-submenu" style="
-        display: none;
-        flex-direction: column;
-        background: #EAF3DE;
-        border-radius: 12px;
-        margin: 4px 0 8px;
-        overflow: hidden;
-      ">
-        <a href="/product.html" onclick="closeMobileMenu()"
-           class="drawer-sub-link">
-          <span style="font-weight:500;">전체 제품 보기</span>
-          <span style="font-size:11px; color:#6b6b6b; display:block; margin-top:1px;">
-            3SecFix™ 라인업
-          </span>
-        </a>
-        <div style="height:0.5px; background:#c8d4b0; margin:0 16px;"></div>
-        <a href="/product-reset-mist.html" onclick="closeMobileMenu()"
-           class="drawer-sub-link">
-          <span style="font-weight:500;">Reset Mist</span>
-          <span style="font-size:11px; color:#6b6b6b; display:block; margin-top:1px;">
-            칙! — 유수분 최적 밸런싱
-          </span>
-        </a>
-        <a href="/product-restore-serum.html" onclick="closeMobileMenu()"
-           class="drawer-sub-link">
-          <span style="font-weight:500;">Restore Serum</span>
-          <span style="font-size:11px; color:#6b6b6b; display:block; margin-top:1px;">
-            톡! — 촘촘히 채워주는 수분 밀도
-          </span>
-        </a>
-        <a href="/product-recover-balm.html" onclick="closeMobileMenu()"
-           class="drawer-sub-link">
-          <span style="font-weight:500;">Recover Cream Balm</span>
-          <span style="font-size:11px; color:#6b6b6b; display:block; margin-top:1px;">
-            쓱! — 가볍지만 쫀쫀한 마지막 보호막
-          </span>
-        </a>
+    <!-- 모바일에서만: 4개 GNB 메뉴 -->
+    <div class="util-nav-mobile">
+      <div class="util-nav-section">
+        <div class="util-nav-title">OUR STORY</div>
+        <a href="/our-story-brand.html" onclick="closeUtilMenu()">Brand Story</a>
+        <a href="/our-story-3secfix.html" onclick="closeUtilMenu()">3SecFix™</a>
+        <a href="/our-story-philosophy.html" onclick="closeUtilMenu()">Philosophy</a>
+      </div>
+      <div class="util-nav-section">
+        <div class="util-nav-title">SHOP</div>
+        <a href="/product.html" onclick="closeUtilMenu()">전체 제품 보기</a>
+        <a href="/product-reset-mist.html" onclick="closeUtilMenu()">Reset Veil Toner</a>
+        <a href="/product-restore-serum.html" onclick="closeUtilMenu()">Restore Serum</a>
+        <a href="/product-recover-balm.html" onclick="closeUtilMenu()">Recover Cream Balm</a>
+      </div>
+      <div class="util-nav-section">
+        <div class="util-nav-title">EXPERIENCE</div>
+        <a href="/experience-review.html" onclick="closeUtilMenu()">Review</a>
+        <a href="/experience-sns.html" onclick="closeUtilMenu()">SNS</a>
+        <a href="/experience-event.html" onclick="closeUtilMenu()">Event</a>
+      </div>
+      <div class="util-nav-section">
+        <div class="util-nav-title">SUPPORT</div>
+        <a href="/support-faq.html" onclick="closeUtilMenu()">FAQ</a>
+        <a href="/support-inquiry.html" onclick="closeUtilMenu()">1:1 Inquiry</a>
+        <a href="/career.html" onclick="closeUtilMenu()">Join Us</a>
       </div>
     </div>
 
-    <a href="/brand.html#community" onclick="closeMobileMenu()"
-       class="drawer-link">COMMUNITY</a>
-
-    <a href="/career.html" onclick="closeMobileMenu()"
-       class="drawer-link">CAREER</a>
-
   </div>
-
-  <!-- 드로어 하단 진단하기 버튼 -->
-  <div style="margin-top:auto; padding-top:40px;">
-    <button onclick="openDiagnosis(); closeMobileMenu();" style="
-      width: 100%; height: 56px;
-      background: #4a5e2f; color: #fff; border: none;
-      border-radius: 16px; cursor: pointer;
-      font-family: 'Pretendard', sans-serif;
-      font-size: 16px; font-weight: 500;
-    ">진단하기 시작하기</button>
-  </div>
-
 </div>
-<!-- ===================== GNB END ===================== -->
+<!-- ===== GNB END ===== -->
 
   <main>
     <section class="hero-section" style="padding: 100px 0; text-align: center;">
@@ -544,24 +474,24 @@ const diagSteps = [
 ];
 
 const diagRec = {
-  0: { title:'Reset Mist만으로 충분합니다',
-       products:['Reset Mist'], msg:'오늘은 여기서 멈추세요. 피부가 스스로 합니다.',
-       anchor:'#reset-mist' },
+  0: { title:'Reset Veil Toner만으로 충분합니다',
+       products:['Reset Veil Toner'], msg:'오늘은 여기서 멈추세요. 피부가 스스로 합니다.',
+       anchor:'#reset-veil-toner' },
   1: { title:'Reset + Restore 추천',
-       products:['Reset Mist','Restore Serum'],
+       products:['Reset Veil Toner','Restore Serum'],
        msg:'예민한 날에는 Recover Cream Balm은 건너뛰어도 됩니다.',
-       anchor:'#reset-mist' },
+       anchor:'#reset-veil-toner' },
   2: { title:'Restore + Recover 추천',
        products:['Restore Serum','Recover Cream Balm'],
        msg:'수분 밀도를 채우고 보호막으로 마무리하세요.',
        anchor:'#restore-serum' },
   3: { title:'Full Routine 추천',
-       products:['Reset Mist','Restore Serum','Recover Cream Balm'],
+       products:['Reset Veil Toner','Restore Serum','Recover Cream Balm'],
        msg:'지금처럼 자극받은 날에는 세 단계 모두가 필요합니다.',
-       anchor:'#reset-mist' }
+       anchor:'#reset-veil-toner' }
 };
 
-let diagCur=0, diagAnswers=[], diagSelected=-1, diagResultAnchor='#reset-mist';
+let diagCur=0, diagAnswers=[], diagSelected=-1, diagResultAnchor='#reset-veil-toner';
 
 function openDiagnosis(){
   diagCur=0; diagAnswers=[]; diagSelected=-1;
@@ -664,60 +594,33 @@ document.addEventListener('keydown', e=>{
 });
 
 
-/* ── 모바일 드로어 ── */
-function openMobileMenu() {
-  const drawer = document.getElementById('mobile-drawer');
-  drawer.style.display = 'flex';
+// ── 유틸리티 드로어 ──
+function openUtilMenu() {
+  document.getElementById('util-drawer').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function closeMobileMenu() {
-  const drawer = document.getElementById('mobile-drawer');
-  drawer.style.display = 'none';
+function closeUtilMenu() {
+  document.getElementById('util-drawer').classList.remove('open');
   document.body.style.overflow = '';
 }
-
-/* ── PRODUCT 하위 메뉴 토글 ── */
-function toggleProductMenu() {
-  const sub    = document.getElementById('product-submenu');
-  const arrow  = document.getElementById('product-arrow');
-  const isOpen = sub.style.display === 'flex';
-  sub.style.display   = isOpen ? 'none' : 'flex';
-  sub.style.flexDirection = 'column';
-  arrow.style.transform   = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
-}
-
-/* ── 현재 페이지 active 표시 ── */
-(function markActivePage() {
-  const path = location.pathname;
-
-  /* PC 메뉴 */
-  document.querySelectorAll('.gnb-link').forEach(a => {
-    const href = a.getAttribute('href') || '';
-    if (href && path.endsWith(href.replace(/^\//, ''))) {
-      a.classList.add('current-page');
-    }
-  });
-
-  /* 드롭다운 항목 */
-  document.querySelectorAll('.gnb-dropdown-item').forEach(a => {
-    const href = a.getAttribute('href') || '';
-    if (href && path.endsWith(href.replace(/^\//, ''))) {
-      a.classList.add('current-page');
-    }
-  });
-
-  /* PRODUCT 메뉴 — 제품 상세 페이지에 있을 때 PRODUCT 메뉴 강조 */
-  if (path.includes('product')) {
-    document.querySelectorAll('.gnb-has-dropdown').forEach(el => {
-      el.classList.add('current-page');
-    });
-  }
-})();
-
-/* ── ESC 키로 드로어 닫기 ── */
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeMobileMenu();
+// 드로어 배경 클릭 시 닫기
+document.getElementById('util-drawer').addEventListener('click', function(e) {
+  if (e.target === this) closeUtilMenu();
 });
+// ESC 키
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeUtilMenu();
+});
+// 현재 페이지 GNB 메뉴 active 표시
+(function() {
+  const path = location.pathname;
+  document.querySelectorAll('.gnb-drop-item').forEach(a => {
+    if (a.getAttribute('href') && path.includes(a.getAttribute('href').replace('/',''))) {
+      a.style.background = '#EAF3DE';
+      a.style.color = '#27500A';
+    }
+  });
+})();
 </script>
 </body>
 </html>
