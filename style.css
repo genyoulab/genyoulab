@@ -1,5 +1,7 @@
 /* 폰트 로드 */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+
 
 :root {
   /* 1-2. 컬러 시스템 */
@@ -335,3 +337,114 @@ nav {
     display: flex;
   }
 }
+
+/* Allerta Stencil Font */
+.font-slogan-allerta {
+  font-family: 'Allerta Stencil', sans-serif !important;
+}
+
+/* Skin Balance Game Button Animation */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 94, 47, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(74, 94, 47, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 94, 47, 0);
+  }
+}
+.pulse-glow-btn {
+  animation: pulseGlow 2s infinite;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.pulse-glow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(74, 94, 47, 0.3);
+  background-color: var(--color-secondary) !important;
+}
+.pulse-glow-btn:active {
+  transform: translateY(0);
+}
+
+/* ── 빵부스러기 (Breadcrumbs) 스타일 ── */
+.breadcrumbs {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.breadcrumbs a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.breadcrumbs a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+.breadcrumbs span {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* ── 카테고리 필터 탭 (Filter Tabs) 스타일 ── */
+.filter-tab {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-surface-2);
+  border: 0.5px solid var(--color-muted);
+  border-radius: 20px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+.filter-tab:hover {
+  background: #EAF3DE;
+  color: #27500A;
+  border-color: var(--color-secondary);
+}
+.filter-tab.active {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(74, 94, 47, 0.15);
+}
+
+/* ── GNB SHOP 메가 메뉴 ── */
+.gnb-mega-menu {
+  display: flex !important;
+  gap: 28px;
+  min-width: 580px;
+  padding: 24px !important;
+  box-sizing: border-box;
+}
+
+.gnb-mega-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gnb-mega-title {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  letter-spacing: 0.08em;
+  padding: 4px 8px;
+  text-transform: uppercase;
+  border-bottom: 0.5px solid var(--color-muted);
+  margin-bottom: 4px;
+}
+
+

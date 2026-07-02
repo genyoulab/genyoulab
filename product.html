@@ -192,20 +192,52 @@
     <!-- SHOP -->
     <div class="gnb-drop-wrap">
       <button class="gnb-link gnb-drop-btn">SHOP</button>
-      <div class="gnb-dropdown">
-        <a href="/product.html" class="gnb-drop-item">
-          전체 제품 보기<span class="gnb-drop-sub">3SecFix™ 라인업</span>
-        </a>
-        <div class="gnb-drop-divider"></div>
-        <a href="/product-reset-mist.html" class="gnb-drop-item">
-          Reset Veil Toner<span class="gnb-drop-sub">칙! — 유수분 밸런싱</span>
-        </a>
-        <a href="/product-restore-serum.html" class="gnb-drop-item">
-          Restore Serum<span class="gnb-drop-sub">톡! — 수분 밀도</span>
-        </a>
-        <a href="/product-recover-balm.html" class="gnb-drop-item">
-          Recover Cream Balm<span class="gnb-drop-sub">쓱! — 마지막 보호막</span>
-        </a>
+      <div class="gnb-dropdown gnb-mega-menu">
+        <!-- 3SecFix™ 라인 컬럼 -->
+        <div class="gnb-mega-col">
+          <div class="gnb-mega-title">3SecFix™ 라인</div>
+          <a href="/product.html?category=3secfix-line" class="gnb-drop-item">
+            전체 보기<span class="gnb-drop-sub">3SecFix™ 라인업</span>
+          </a>
+          <a href="/product.html?category=3step-3secfix" class="gnb-drop-item">
+            3step 3SecFix™<span class="gnb-drop-sub">3초 3단계 풀 패키지</span>
+          </a>
+          <a href="/product-reset-mist.html" class="gnb-drop-item">
+            리셋 베일 토너<span class="gnb-drop-sub">칙! — 유수분 밸런싱</span>
+          </a>
+          <a href="/product-restore-serum.html" class="gnb-drop-item">
+            리스토어 세럼<span class="gnb-drop-sub">톡! — 수분 밀도</span>
+          </a>
+          <a href="/product-recover-balm.html" class="gnb-drop-item">
+            리커버 크림 밤<span class="gnb-drop-sub">쓱! — 마지막 보호막</span>
+          </a>
+        </div>
+        <!-- 올리브 부스터 라인 컬럼 -->
+        <div class="gnb-mega-col">
+          <div class="gnb-mega-title">올리브 부스터 라인</div>
+          <a href="/product.html?category=olive-booster-line" class="gnb-drop-item">
+            전체 보기<span class="gnb-drop-sub">올리브 활성성분 부스팅</span>
+          </a>
+          <a href="/product.html?category=olive-glow-booster" class="gnb-drop-item">
+            올리브 글로우 부스터<span class="gnb-drop-sub">광채 피부의 시작</span>
+          </a>
+        </div>
+        <!-- 썬,바디,헤어 라인 컬럼 -->
+        <div class="gnb-mega-col">
+          <div class="gnb-mega-title">썬,바디,헤어 라인</div>
+          <a href="/product.html?category=sun-body-hair-line" class="gnb-drop-item">
+            전체 보기<span class="gnb-drop-sub">전신 토탈 케어 라인</span>
+          </a>
+          <a href="/product.html?category=sun-care" class="gnb-drop-item">
+            썬케어<span class="gnb-drop-sub">피부 보호 선스크린</span>
+          </a>
+          <a href="/product.html?category=body-care" class="gnb-drop-item">
+            바디케어<span class="gnb-drop-sub">바디 진정 및 보습</span>
+          </a>
+          <a href="/product.html?category=hair-care" class="gnb-drop-item">
+            헤어케어<span class="gnb-drop-sub">두피 및 모발 영양</span>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -307,7 +339,7 @@
     <!-- 구분선 -->
     <div class="util-divider"></div>
 
-    <!-- 모바일에서만: 4개 GNB 메뉴 -->
+    <!-- 모바일에서만: GNB 메뉴 -->
     <div class="util-nav-mobile">
       <div class="util-nav-section">
         <div class="util-nav-title">OUR STORY</div>
@@ -317,10 +349,26 @@
       </div>
       <div class="util-nav-section">
         <div class="util-nav-title">SHOP</div>
-        <a href="/product.html" onclick="closeUtilMenu()">전체 제품 보기</a>
-        <a href="/product-reset-mist.html" onclick="closeUtilMenu()">Reset Veil Toner</a>
-        <a href="/product-restore-serum.html" onclick="closeUtilMenu()">Restore Serum</a>
-        <a href="/product-recover-balm.html" onclick="closeUtilMenu()">Recover Cream Balm</a>
+        
+        <!-- 3SecFix™ 라인 -->
+        <div style="font-family:'Pretendard', sans-serif; font-size:11px; font-weight:600; color:#7a9a3f; letter-spacing:0.08em; padding: 6px 4px 2px; text-transform:uppercase; border-bottom:0.5px solid #e8e4da; margin-top:8px;">3SecFix™ 라인</div>
+        <a href="/product.html?category=3secfix-line" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">전체 보기</a>
+        <a href="/product.html?category=3step-3secfix" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">3step 3SecFix™</a>
+        <a href="/product-reset-mist.html" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">리셋 베일 토너</a>
+        <a href="/product-restore-serum.html" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">리스토어 세럼</a>
+        <a href="/product-recover-balm.html" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">리커버 크림 밤</a>
+
+        <!-- 올리브 부스터 라인 -->
+        <div style="font-family:'Pretendard', sans-serif; font-size:11px; font-weight:600; color:#7a9a3f; letter-spacing:0.08em; padding: 6px 4px 2px; text-transform:uppercase; border-bottom:0.5px solid #e8e4da; margin-top:12px;">올리브 부스터 라인</div>
+        <a href="/product.html?category=olive-booster-line" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">전체 보기</a>
+        <a href="/product.html?category=olive-glow-booster" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">올리브 글로우 부스터</a>
+
+        <!-- 썬,바디,헤어 라인 -->
+        <div style="font-family:'Pretendard', sans-serif; font-size:11px; font-weight:600; color:#7a9a3f; letter-spacing:0.08em; padding: 6px 4px 2px; text-transform:uppercase; border-bottom:0.5px solid #e8e4da; margin-top:12px;">썬,바디,헤어 라인</div>
+        <a href="/product.html?category=sun-body-hair-line" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">전체 보기</a>
+        <a href="/product.html?category=sun-care" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">썬케어</a>
+        <a href="/product.html?category=body-care" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">바디케어</a>
+        <a href="/product.html?category=hair-care" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">헤어케어</a>
       </div>
       <div class="util-nav-section">
         <div class="util-nav-title">EXPERIENCE</div>
@@ -366,99 +414,136 @@
 
 <section style="padding:60px 48px 80px;background:#f2f0e8;">
   <div style="max-width:1100px;margin:0 auto;box-sizing:border-box;">
+
+    <!-- ── 카테고리 필터 UI ── -->
+    <div class="category-filter-container" style="margin-bottom: 40px; font-family: 'Pretendard', sans-serif;">
+      <!-- 대분류 (라인) -->
+      <div class="line-tabs" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; border-bottom: 1.5px solid #e8e4da; padding-bottom: 14px;">
+        <button class="filter-tab line-tab active" data-target="all" onclick="selectLine('all')">전체</button>
+        <button class="filter-tab line-tab" data-target="3secfix-line" onclick="selectLine('3secfix-line')">3SecFix™ 라인</button>
+        <button class="filter-tab line-tab" data-target="olive-booster-line" onclick="selectLine('olive-booster-line')">올리브 부스터 라인</button>
+        <button class="filter-tab line-tab" data-target="sun-body-hair-line" onclick="selectLine('sun-body-hair-line')">썬,바디,헤어 라인</button>
+      </div>
+      
+      <!-- 소분류 (상품 카테고리) -->
+      <div class="sub-tabs" id="sub-tabs-container" style="display: flex; gap: 6px; flex-wrap: wrap; min-height: 38px;">
+        <!-- JavaScript가 동적으로 렌더링 -->
+      </div>
+    </div>
+
+    <!-- ── 상품 목록 그리드 ── -->
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
 
       <!-- Reset Veil Toner -->
-      <a href="/product-reset-mist.html" style="text-decoration:none;">
-        <div style="border:0.5px solid #c8d4b0;border-radius:24px;overflow:hidden;
-          background:#fff;transition:transform .2s,box-shadow .2s;"
-          onmouseover="this.style.transform='translateY(-6px)';
-            this.style.boxShadow='0 16px 40px rgba(74,94,47,0.12)'"
-          onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-          <div style="height:260px; overflow:hidden;">
-            <img src="/assets/product-reset-toner.jpg" alt="GenYou Reset Veil Toner" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <div style="padding:24px;">
-            <div style="font-family:'Pretendard',sans-serif;font-size:11px;
-              font-weight:500;color:#7a9a3f;letter-spacing:0.08em;margin-bottom:6px;">
-              Step 01 · 칙!
+      <div class="product-item" data-line="3secfix-line" data-sub="reset-veil-toner">
+        <a href="/product-reset-mist.html" style="text-decoration:none;">
+          <div style="border:0.5px solid #c8d4b0;border-radius:24px;overflow:hidden;
+            background:#fff;transition:transform .2s,box-shadow .2s;"
+            onmouseover="this.style.transform='translateY(-6px)';
+              this.style.boxShadow='0 16px 40px rgba(74,94,47,0.12)'"
+            onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+            <div style="height:260px; overflow:hidden;">
+              <img src="/assets/product-reset-toner.jpg" alt="GenYou Reset Veil Toner" style="width:100%; height:100%; object-fit:cover;">
             </div>
-            <div style="font-family:'Pretendard',sans-serif;font-size:18px;
-              font-weight:500;color:#2e2e2e;margin-bottom:4px;">Reset Veil Toner</div>
-            <div style="font-family:'Pretendard',sans-serif;font-size:13px;
-              color:#6b6b6b;margin-bottom:16px;">유수분 최적 밸런싱</div>
-            <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div style="padding:24px;">
+              <div style="font-family:'Pretendard',sans-serif;font-size:11px;
+                font-weight:500;color:#7a9a3f;letter-spacing:0.08em;margin-bottom:6px;">
+                Step 01 · 칙!
+              </div>
               <div style="font-family:'Pretendard',sans-serif;font-size:18px;
-                font-weight:500;color:#2e2e2e;">24,000원</div>
-              <div style="font-family:'Pretendard',sans-serif;font-size:12px;
-                color:#4a5e2f;font-weight:500;">자세히 보기 →</div>
+                font-weight:500;color:#2e2e2e;margin-bottom:4px;">Reset Veil Toner</div>
+              <div style="font-family:'Pretendard',sans-serif;font-size:13px;
+                color:#6b6b6b;margin-bottom:16px;">유수분 최적 밸런싱</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <div style="font-family:'Pretendard',sans-serif;font-size:18px;
+                  font-weight:500;color:#2e2e2e;">24,000원</div>
+                <div style="font-family:'Pretendard',sans-serif;font-size:12px;
+                  color:#4a5e2f;font-weight:500;">자세히 보기 →</div>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
 
       <!-- Restore Serum -->
-      <a href="/product-restore-serum.html" style="text-decoration:none;">
-        <div style="border:0.5px solid #7a9a3f;border-radius:24px;overflow:hidden;
-          background:#fff;transition:transform .2s,box-shadow .2s;"
-          onmouseover="this.style.transform='translateY(-6px)';
-            this.style.boxShadow='0 16px 40px rgba(74,94,47,0.15)'"
-          onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-          <div style="height:260px; overflow:hidden;">
-            <img src="/assets/product-restore-serum.jpg" alt="GenYou Restore Serum" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <div style="padding:24px;">
-            <div style="font-family:'Pretendard',sans-serif;font-size:11px;
-              font-weight:500;color:#7a9a3f;letter-spacing:0.08em;margin-bottom:6px;">
-              Step 02 · 톡!
+      <div class="product-item" data-line="3secfix-line" data-sub="restore-serum">
+        <a href="/product-restore-serum.html" style="text-decoration:none;">
+          <div style="border:0.5px solid #7a9a3f;border-radius:24px;overflow:hidden;
+            background:#fff;transition:transform .2s,box-shadow .2s;"
+            onmouseover="this.style.transform='translateY(-6px)';
+              this.style.boxShadow='0 16px 40px rgba(74,94,47,0.15)'"
+            onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+            <div style="height:260px; overflow:hidden;">
+              <img src="/assets/product-restore-serum.jpg" alt="GenYou Restore Serum" style="width:100%; height:100%; object-fit:cover;">
             </div>
-            <div style="font-family:'Pretendard',sans-serif;font-size:18px;
-              font-weight:500;color:#2e2e2e;margin-bottom:4px;">Restore Serum</div>
-            <div style="font-family:'Pretendard',sans-serif;font-size:13px;
-              color:#6b6b6b;margin-bottom:16px;">촘촘히 채워주는 수분 밀도</div>
-            <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div style="padding:24px;">
+              <div style="font-family:'Pretendard',sans-serif;font-size:11px;
+                font-weight:500;color:#7a9a3f;letter-spacing:0.08em;margin-bottom:6px;">
+                Step 02 · 톡!
+              </div>
               <div style="font-family:'Pretendard',sans-serif;font-size:18px;
-                font-weight:500;color:#2e2e2e;">33,000원</div>
-              <div style="font-family:'Pretendard',sans-serif;font-size:12px;
-                color:#4a5e2f;font-weight:500;">자세히 보기 →</div>
+                font-weight:500;color:#2e2e2e;margin-bottom:4px;">Restore Serum</div>
+              <div style="font-family:'Pretendard',sans-serif;font-size:13px;
+                color:#6b6b6b;margin-bottom:16px;">촘촘히 채워주는 수분 밀도</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <div style="font-family:'Pretendard',sans-serif;font-size:18px;
+                  font-weight:500;color:#2e2e2e;">33,000원</div>
+                <div style="font-family:'Pretendard',sans-serif;font-size:12px;
+                  color:#4a5e2f;font-weight:500;">자세히 보기 →</div>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
 
       <!-- Recover Cream Balm -->
-      <a href="/product-recover-balm.html" style="text-decoration:none;">
-        <div style="border:0.5px solid #c8d4b0;border-radius:24px;overflow:hidden;
-          background:#fff;transition:transform .2s,box-shadow .2s;"
-          onmouseover="this.style.transform='translateY(-6px)';
-            this.style.boxShadow='0 16px 40px rgba(74,94,47,0.12)'"
-          onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-          <div style="height:260px; overflow:hidden;">
-            <img src="/assets/product-recover-balm.jpg" alt="GenYou Recover Cream Balm" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <div style="padding:24px;">
-            <div style="font-family:'Pretendard',sans-serif;font-size:11px;
-              font-weight:500;color:#7a9a3f;letter-spacing:0.08em;margin-bottom:6px;">
-              Step 03 · 쓱!
+      <div class="product-item" data-line="3secfix-line" data-sub="recover-cream-balm">
+        <a href="/product-recover-balm.html" style="text-decoration:none;">
+          <div style="border:0.5px solid #c8d4b0;border-radius:24px;overflow:hidden;
+            background:#fff;transition:transform .2s,box-shadow .2s;"
+            onmouseover="this.style.transform='translateY(-6px)';
+              this.style.boxShadow='0 16px 40px rgba(74,94,47,0.12)'"
+            onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+            <div style="height:260px; overflow:hidden;">
+              <img src="/assets/product-recover-balm.jpg" alt="GenYou Recover Cream Balm" style="width:100%; height:100%; object-fit:cover;">
             </div>
-            <div style="font-family:'Pretendard',sans-serif;font-size:18px;
-              font-weight:500;color:#2e2e2e;margin-bottom:4px;">Recover Cream Balm</div>
-            <div style="font-family:'Pretendard',sans-serif;font-size:13px;
-              color:#6b6b6b;margin-bottom:16px;">가볍지만 쫀쫀한 마지막 보호막</div>
-            <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div style="padding:24px;">
+              <div style="font-family:'Pretendard',sans-serif;font-size:11px;
+                font-weight:500;color:#7a9a3f;letter-spacing:0.08em;margin-bottom:6px;">
+                Step 03 · 쓱!
+              </div>
               <div style="font-family:'Pretendard',sans-serif;font-size:18px;
-                font-weight:500;color:#2e2e2e;">36,000원</div>
-              <div style="font-family:'Pretendard',sans-serif;font-size:12px;
-                color:#4a5e2f;font-weight:500;">자세히 보기 →</div>
+                font-weight:500;color:#2e2e2e;margin-bottom:4px;">Recover Cream Balm</div>
+              <div style="font-family:'Pretendard',sans-serif;font-size:13px;
+                color:#6b6b6b;margin-bottom:16px;">가볍지만 쫀쫀한 마지막 보호막</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <div style="font-family:'Pretendard',sans-serif;font-size:18px;
+                  font-weight:500;color:#2e2e2e;">36,000원</div>
+                <div style="font-family:'Pretendard',sans-serif;font-size:12px;
+                  color:#4a5e2f;font-weight:500;">자세히 보기 →</div>
+              </div>
             </div>
           </div>
+        </a>
+      </div>
+
+      <!-- 준비중 안내 플레이스홀더 카드 -->
+      <div id="no-products-message" style="display: none; width: 100%; text-align: center; padding: 60px 24px; background: #fff; border: 0.5px solid #c8d4b0; border-radius: 24px; box-shadow: 0 8px 32px rgba(74,94,47,0.05); grid-column: span 3; box-sizing: border-box;">
+        <div style="width: 56px; height: 56px; border-radius: 50%; background: #EAF3DE; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4a5e2f" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
         </div>
-      </a>
+        <h3 style="font-family:'Pretendard', sans-serif; font-size: 17px; font-weight: 600; color: #2e2e2e; margin-bottom: 6px;">상품 준비 중</h3>
+        <p style="font-family:'Pretendard', sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">선택하신 카테고리의 상품이 곧 출시될 예정입니다. 조금만 기다려주세요!</p>
+      </div>
 
     </div>
 
     <!-- 3종 세트 배너 -->
-    <div style="margin-top:32px;border-radius:20px;padding:44px 40px;
+    <div class="product-set-banner" data-line="3secfix-line" data-sub="3step-3secfix" style="margin-top:32px;border-radius:20px;padding:44px 40px;
       background:#4a5e2f;text-align:center;">
       <div style="font-family:'Pretendard',sans-serif;font-size:12px;
         color:rgba(255,255,255,0.6);letter-spacing:0.08em;margin-bottom:10px;">
@@ -487,7 +572,6 @@
     </div>
 
   </div>
-</section>
 
 <!-- 모바일 반응형 -->
 <style>
@@ -572,6 +656,194 @@ document.addEventListener('keydown', e => {
     }
   });
 })();
-</script>
-</body>
-</html>
+
+// ── 카테고리 필터링 비즈니스 로직 ──
+const subcategoryData = {
+  'all': [],
+  '3secfix-line': [
+    { name: '전체 보기', slug: 'all-3secfix' },
+    { name: '3step 3SecFix™', slug: '3step-3secfix' },
+    { name: '리셋 베일 토너', slug: 'reset-veil-toner' },
+    { name: '리스토어 세럼', slug: 'restore-serum' },
+    { name: '리커버 크림 밤', slug: 'recover-cream-balm' }
+  ],
+  'olive-booster-line': [
+    { name: '전체 보기', slug: 'all-olive' },
+    { name: '올리브 글로우 부스터', slug: 'olive-glow-booster' }
+  ],
+  'sun-body-hair-line': [
+    { name: '전체 보기', slug: 'all-sun-body-hair' },
+    { name: '썬케어', slug: 'sun-care' },
+    { name: '바디케어', slug: 'body-care' },
+    { name: '헤어케어', slug: 'hair-care' }
+  ]
+};
+
+let activeLine = 'all';
+let activeSub = 'all';
+
+function renderSubTabs() {
+  const container = document.getElementById('sub-tabs-container');
+  if (!container) return;
+  container.innerHTML = '';
+  
+  const subs = subcategoryData[activeLine];
+  if (!subs || subs.length === 0) {
+    container.style.display = 'none';
+    return;
+  }
+  
+  container.style.display = 'flex';
+  subs.forEach(sub => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-tab sub-tab' + (activeSub === sub.slug ? ' active' : '');
+    btn.textContent = sub.name;
+    btn.onclick = function() { selectSub(sub.slug); };
+    container.appendChild(btn);
+  });
+}
+
+function selectLine(lineSlug, updateUrl = true) {
+  activeLine = lineSlug;
+  activeSub = 'all';
+  
+  document.querySelectorAll('.line-tab').forEach(tab => {
+    if (tab.getAttribute('data-target') === lineSlug) {
+      tab.classList.add('active');
+    } else {
+      tab.classList.remove('active');
+    }
+  });
+  
+  renderSubTabs();
+  filterProducts();
+  
+  if (updateUrl) {
+    updateUrlParam(lineSlug);
+  }
+}
+
+function selectSub(subSlug, updateUrl = true) {
+  activeSub = subSlug;
+  
+  renderSubTabs();
+  filterProducts();
+  
+  if (updateUrl) {
+    updateUrlParam(subSlug);
+  }
+}
+
+function updateUrlParam(slug) {
+  const url = new URL(window.location);
+  if (slug === 'all') {
+    url.searchParams.delete('category');
+  } else {
+    url.searchParams.set('category', slug);
+  }
+  window.history.pushState({}, '', url);
+}
+
+function filterProducts() {
+  const items = document.querySelectorAll('.product-item');
+  const setBanner = document.querySelector('.product-set-banner');
+  const noMessage = document.getElementById('no-products-message');
+  
+  let visibleCount = 0;
+  
+  items.forEach(item => {
+    const itemLine = item.getAttribute('data-line');
+    const itemSub = item.getAttribute('data-sub');
+    
+    let isVisible = false;
+    
+    if (activeLine === 'all') {
+      isVisible = true;
+    } else if (activeLine === '3secfix-line') {
+      if (activeSub === 'all' || activeSub === 'all-3secfix') {
+        isVisible = true;
+      } else {
+        isVisible = (itemSub === activeSub);
+      }
+    } else if (activeLine === 'olive-booster-line') {
+      if (activeSub === 'all' || activeSub === 'all-olive') {
+        isVisible = (itemLine === 'olive-booster-line');
+      } else {
+        isVisible = (itemLine === 'olive-booster-line' && itemSub === activeSub);
+      }
+    } else if (activeLine === 'sun-body-hair-line') {
+      if (activeSub === 'all' || activeSub === 'all-sun-body-hair') {
+        isVisible = (itemLine === 'sun-body-hair-line');
+      } else {
+        isVisible = (itemLine === 'sun-body-hair-line' && itemSub === activeSub);
+      }
+    }
+    
+    if (isVisible) {
+      item.style.display = 'block';
+      visibleCount++;
+    } else {
+      item.style.display = 'none';
+    }
+  });
+  
+  if (setBanner) {
+    let showSet = false;
+    if (activeLine === 'all') {
+      showSet = true;
+    } else if (activeLine === '3secfix-line') {
+      if (activeSub === 'all' || activeSub === 'all-3secfix' || activeSub === '3step-3secfix') {
+        showSet = true;
+      }
+    }
+    
+    if (showSet) {
+      setBanner.style.display = 'block';
+      visibleCount++;
+    } else {
+      setBanner.style.display = 'none';
+    }
+  }
+  
+  if (noMessage) {
+    if (visibleCount === 0) {
+      noMessage.style.display = 'block';
+    } else {
+      noMessage.style.display = 'none';
+    }
+  }
+}
+
+function initFilter() {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get('category');
+  
+  if (!category) {
+    selectLine('all', false);
+    return;
+  }
+  
+  if (subcategoryData[category]) {
+    selectLine(category, false);
+  } else {
+    let foundLine = 'all';
+    for (const [line, subs] of Object.entries(subcategoryData)) {
+      if (subs.some(s => s.slug === category)) {
+        foundLine = line;
+        break;
+      }
+    }
+    
+    if (foundLine !== 'all') {
+      activeLine = foundLine;
+      activeSub = category;
+      selectLine(foundLine, false);
+      selectSub(category, false);
+    } else {
+      selectLine('all', false);
+    }
+  }
+}
+
+window.addEventListener('DOMContentLoaded', initFilter);
+
