@@ -1,10 +1,7 @@
-import os
-import re
+const fs = require('fs');
+const path = require('path');
 
-# HTML files to update - dynamically scan all HTML files in current directory
-html_files = [f for f in os.listdir('.') if f.endswith('.html') and os.path.isfile(f)]
-
-html_gnb = """<!-- ===== GNB START ===== -->
+const htmlGnb = `<!-- ===== GNB START ===== -->
 <nav id="gnb">
   <!-- 로고 -->
   <a href="/index.html" class="gnb-logo">GenYou</a>
@@ -278,36 +275,33 @@ html_gnb = """<!-- ===== GNB START ===== -->
 
   </div>
 </div>
-<!-- ===== GNB END ===== -->"""
+<!-- ===== GNB END ===== -->`;
 
-# Regex to match GNB blocks: from "GNB START" comment to "GNB END" comment
-gnb_pattern = re.compile(
-    r"<!--\s*={3,}\s*GNB START\s*={3,}\s*-->.*?<!--\s*={3,}\s*GNB END\s*={3,}\s*-->",
-    re.DOTALL | re.IGNORECASE
-)
+// Regex pattern to search for the GNB comment blocks
+const gnbRegex = /<!--\s*={3,}\s*GNB START\s*={3,}\s*-->[\s\S]*?<!--\s*={3,}\s*GNB END\s*={3,}\s*-->/gi;
 
-updated_count = 0
+const files = fs.readdirSync(__dirname);
+let updatedCount = 0;
 
-for fname in html_files:
-    # Skip temporary or node_modules files if any
-    if "node_modules" in fname or ".git" in fname:
-        continue
-        
-    try:
-        with open(fname, 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        # Check if the GNB comments exist in file
-        if gnb_pattern.search(content):
-            new_content = gnb_pattern.sub(html_gnb, content)
-            
-            with open(fname, 'w', encoding='utf-8') as f:
-                f.write(new_content)
-            print(f"Updated GNB in: {fname}")
-            updated_count += 1
-        else:
-            print(f"No GNB block found in: {fname}")
-    except Exception as e:
-        print(f"Error processing {fname}: {e}")
+files.forEach(file => {
+  if (file.endsWith('.html') && fs.statSync(file).isFile()) {
+    try {
+      const filePath = path.join(__dirname, file);
+      let content = fs.readFileSync(filePath, 'utf8');
 
-print(f"\\nSuccessfully updated GNB in {updated_count} files.")
+      if (gnbRegex.test(content)) {
+        // Replace matching GNB blocks
+        content = content.replace(gnbRegex, htmlGnb);
+        fs.writeFileSync(filePath, content, 'utf8');
+        console.log(`Updated GNB in: ${file}`);
+        updatedCount++;
+      } else {
+        console.log(`No GNB block found in: ${file}`);
+      }
+    } catch (e) {
+      console.error(`Error processing ${file}:`, e);
+    }
+  }
+});
+
+console.log(`\nSuccessfully updated GNB in ${updatedCount} files.`);

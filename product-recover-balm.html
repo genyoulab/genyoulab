@@ -303,50 +303,72 @@
     <div class="gnb-drop-wrap">
       <button class="gnb-link gnb-drop-btn">SHOP</button>
       <div class="gnb-dropdown gnb-mega-menu">
-        <!-- 3SecFix™ 라인 컬럼 -->
-        <div class="gnb-mega-col">
-          <div class="gnb-mega-title">3SecFix™ 라인</div>
-          <a href="/product.html?category=3secfix-line" class="gnb-drop-item">
-            전체 보기<span class="gnb-drop-sub">3SecFix™ 라인업</span>
-          </a>
-          <a href="/product.html?category=3step-3secfix" class="gnb-drop-item">
-            3step 3SecFix™<span class="gnb-drop-sub">3초 3단계 풀 패키지</span>
-          </a>
-          <a href="/product-reset-mist.html" class="gnb-drop-item">
-            리셋 베일 토너<span class="gnb-drop-sub">칙! — 유수분 밸런싱</span>
-          </a>
-          <a href="/product-restore-serum.html" class="gnb-drop-item">
-            리스토어 세럼<span class="gnb-drop-sub">톡! — 수분 밀도</span>
-          </a>
-          <a href="/product-recover-balm.html" class="gnb-drop-item">
-            리커버 크림 밤<span class="gnb-drop-sub">쓱! — 마지막 보호막</span>
-          </a>
-        </div>
-        <!-- 올리브 부스터 라인 컬럼 -->
-        <div class="gnb-mega-col">
-          <div class="gnb-mega-title">올리브 부스터 라인</div>
-          <a href="/product.html?category=olive-booster-line" class="gnb-drop-item">
-            전체 보기<span class="gnb-drop-sub">올리브 활성성분 부스팅</span>
-          </a>
-          <a href="/product.html?category=olive-glow-booster" class="gnb-drop-item">
-            올리브 글로우 부스터<span class="gnb-drop-sub">광채 피부의 시작</span>
-          </a>
-        </div>
-        <!-- 썬,바디,헤어 라인 컬럼 -->
-        <div class="gnb-mega-col">
-          <div class="gnb-mega-title">썬,바디,헤어 라인</div>
-          <a href="/product.html?category=sun-body-hair-line" class="gnb-drop-item">
-            전체 보기<span class="gnb-drop-sub">전신 토탈 케어 라인</span>
-          </a>
-          <a href="/product.html?category=sun-care" class="gnb-drop-item">
-            썬케어<span class="gnb-drop-sub">피부 보호 선스크린</span>
-          </a>
-          <a href="/product.html?category=body-care" class="gnb-drop-item">
-            바디케어<span class="gnb-drop-sub">바디 진정 및 보습</span>
-          </a>
-          <a href="/product.html?category=hair-care" class="gnb-drop-item">
-            헤어케어<span class="gnb-drop-sub">두피 및 모발 영양</span>
-          </a>
+        <div class="gnb-accordion">
+          <!-- 1. 3SecFix™ -->
+          <div class="gnb-acc-item" tabindex="0" aria-expanded="false">
+            <button class="gnb-acc-trigger" type="button">
+              3SecFix™
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="gnb-acc-arrow">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="gnb-acc-content">
+              <div class="gnb-acc-inner">
+                <a href="/product.html?category=3step-3secfix" class="gnb-drop-item">
+                  3SecFix™ 3Step<span class="gnb-drop-sub">3초 3단계 풀 패키지</span>
+                </a>
+                <a href="/product-reset-mist.html" class="gnb-drop-item">
+                  리셋 베일 토너<span class="gnb-drop-sub">칙! — 유수분 밸런싱</span>
+                </a>
+                <a href="/product-restore-serum.html" class="gnb-drop-item">
+                  리스토어 세럼<span class="gnb-drop-sub">톡! — 수분 밀도</span>
+                </a>
+                <a href="/product-recover-balm.html" class="gnb-drop-item">
+                  리커버 크림 밤<span class="gnb-drop-sub">쓱! — 마지막 보호막</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. 올리브 부스터 라인 -->
+          <div class="gnb-acc-item" tabindex="0" aria-expanded="false">
+            <button class="gnb-acc-trigger" type="button">
+              올리브 부스터 라인
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="gnb-acc-arrow">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="gnb-acc-content">
+              <div class="gnb-acc-inner">
+                <a href="/product.html?category=olive-glow-booster" class="gnb-drop-item">
+                  올리브 글로우 부스터<span class="gnb-drop-sub">광채 피부의 시작</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 썬,바디,헤어 라인 -->
+          <div class="gnb-acc-item" tabindex="0" aria-expanded="false">
+            <button class="gnb-acc-trigger" type="button">
+              썬,바디,헤어 라인
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="gnb-acc-arrow">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="gnb-acc-content">
+              <div class="gnb-acc-inner">
+                <a href="/product.html?category=sun-care" class="gnb-drop-item">
+                  썬케어<span class="gnb-drop-sub">피부 보호 선스크린</span>
+                </a>
+                <a href="/product.html?category=body-care" class="gnb-drop-item">
+                  바디 케어<span class="gnb-drop-sub">바디 진정 및 보습</span>
+                </a>
+                <a href="/product.html?category=hair-care" class="gnb-drop-item">
+                  헤어 케어<span class="gnb-drop-sub">두피 및 모발 영양</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -459,26 +481,57 @@
       </div>
       <div class="util-nav-section">
         <div class="util-nav-title">SHOP</div>
-        
-        <!-- 3SecFix™ 라인 -->
-        <div style="font-family:'Pretendard', sans-serif; font-size:11px; font-weight:600; color:#7a9a3f; letter-spacing:0.08em; padding: 6px 4px 2px; text-transform:uppercase; border-bottom:0.5px solid #e8e4da; margin-top:8px;">3SecFix™ 라인</div>
-        <a href="/product.html?category=3secfix-line" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">전체 보기</a>
-        <a href="/product.html?category=3step-3secfix" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">3step 3SecFix™</a>
-        <a href="/product-reset-mist.html" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">리셋 베일 토너</a>
-        <a href="/product-restore-serum.html" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">리스토어 세럼</a>
-        <a href="/product-recover-balm.html" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">리커버 크림 밤</a>
+        <div class="gnb-accordion">
+          <!-- 1. 3SecFix™ -->
+          <div class="gnb-acc-item" tabindex="0" aria-expanded="false">
+            <button class="gnb-acc-trigger" type="button">
+              3SecFix™
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="gnb-acc-arrow">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="gnb-acc-content">
+              <div class="gnb-acc-inner">
+                <a href="/product.html?category=3step-3secfix" onclick="closeUtilMenu()">3step 3SecFix™</a>
+                <a href="/product-reset-mist.html" onclick="closeUtilMenu()">리셋 베일 토너</a>
+                <a href="/product-restore-serum.html" onclick="closeUtilMenu()">리스토어 세럼</a>
+                <a href="/product-recover-balm.html" onclick="closeUtilMenu()">리커버 크림 밤</a>
+              </div>
+            </div>
+          </div>
 
-        <!-- 올리브 부스터 라인 -->
-        <div style="font-family:'Pretendard', sans-serif; font-size:11px; font-weight:600; color:#7a9a3f; letter-spacing:0.08em; padding: 6px 4px 2px; text-transform:uppercase; border-bottom:0.5px solid #e8e4da; margin-top:12px;">올리브 부스터 라인</div>
-        <a href="/product.html?category=olive-booster-line" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">전체 보기</a>
-        <a href="/product.html?category=olive-glow-booster" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">올리브 글로우 부스터</a>
+          <!-- 2. 올리브 부스터 라인 -->
+          <div class="gnb-acc-item" tabindex="0" aria-expanded="false">
+            <button class="gnb-acc-trigger" type="button">
+              올리브 부스터 라인
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="gnb-acc-arrow">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="gnb-acc-content">
+              <div class="gnb-acc-inner">
+                <a href="/product.html?category=olive-glow-booster" onclick="closeUtilMenu()">올리브 글로우 부스터</a>
+              </div>
+            </div>
+          </div>
 
-        <!-- 썬,바디,헤어 라인 -->
-        <div style="font-family:'Pretendard', sans-serif; font-size:11px; font-weight:600; color:#7a9a3f; letter-spacing:0.08em; padding: 6px 4px 2px; text-transform:uppercase; border-bottom:0.5px solid #e8e4da; margin-top:12px;">썬,바디,헤어 라인</div>
-        <a href="/product.html?category=sun-body-hair-line" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">전체 보기</a>
-        <a href="/product.html?category=sun-care" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">썬케어</a>
-        <a href="/product.html?category=body-care" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">바디케어</a>
-        <a href="/product.html?category=hair-care" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">헤어케어</a>
+          <!-- 3. 썬,바디,헤어 라인 -->
+          <div class="gnb-acc-item" tabindex="0" aria-expanded="false">
+            <button class="gnb-acc-trigger" type="button">
+              썬,바디,헤어 라인
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="gnb-acc-arrow">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="gnb-acc-content">
+              <div class="gnb-acc-inner">
+                <a href="/product.html?category=sun-care" onclick="closeUtilMenu()">썬케어</a>
+                <a href="/product.html?category=body-care" onclick="closeUtilMenu()">바디 케어</a>
+                <a href="/product.html?category=hair-care" onclick="closeUtilMenu()">헤어 케어</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="util-nav-section">
         <div class="util-nav-title">EXPERIENCE</div>
@@ -817,6 +870,39 @@
 
   </div>
 </section>
+
+<!-- ===== 전성분 표기 섹션 START ===== -->
+<section class="ingredients-section">
+  <div class="ingredients-container">
+    <div class="ingredients-card">
+      <div class="ingredients-card-meta">미백/주름개선 2중 기능성화장품</div>
+      <h3 class="ingredients-card-title">제품명 : 젠유 리커버 크림 밤</h3>
+      <h4 class="ingredients-card-subtitle">GenYou Recover Cream Balm</h4>
+      <div class="ingredients-card-volume">용량 : 50mL / 1.69fl.oz.</div>
+      
+      <hr class="ingredients-card-divider">
+      
+      <div class="ingredients-item-title">전성분</div>
+      <p class="ingredients-item-desc">올리브수, 글리세린, 카프릴릭/카프릭트라이글리세라이드, 세테아릴알코올, 부틸렌글라이콜, 펜타에리스리틸테트라에틸헥사노에이트, 다이카프릴릴카보네이트, 1,2-헥산다이올, 부틸렌글라이콜다이카프릴레이트/다이카프레이트, 나이아신아마이드, 폴리글리세릴-3메틸글루코오스다이스테아레이트, 폴리글리세릴-3다이스테아레이트, 글리세릴스테아레이트, 정제수, 암모늄아크릴로일다이메틸타우레이트/브이피코폴리머, 세테아릴글루코사이드, 에틸헥실글리세린, 폴리아크릴레이트크로스폴리머-6, 글리세릴스테아레이트시트레이트, 카프릴릴글라이콜, 라벤더오일, 알란토인, 다이포타슘글리시리제이트, 아데노신, 일랑일랑꽃오일, 펜틸렌글라이콜, t-부틸알코올, 소듐하이알루로네이트, 스페인감초뿌리추출물, 소듐하이알루로네이트크로스폴리머, 병풀추출물, 하이드롤라이즈드하이알루로닉애씨드, 마데카소사이드, 아시아티코사이드, 하이알루로닉애씨드, 녹차추출물, 호장근뿌리추출물, 하이드롤라이즈드소듐하이알루로네이트, 황금추출물, 마트리카리아꽃추출물, 아시아틱애씨드, 마데카식애씨드, 로즈마리잎추출물, 리날룰, 벤질벤조에이트, 벤질살리실레이트, 파네솔</p>
+      
+      <div class="ingredients-item-title">효능 · 효과</div>
+      <p class="ingredients-item-desc">피부의 미백에 도움을 준다. 피부의 주름개선에 도움을 준다.</p>
+      
+      <div class="ingredients-item-title">용법 · 용량</div>
+      <p class="ingredients-item-desc">본 품 적당량을 취해 피부에 골고루 펴 바른다.</p>
+      
+      <div class="ingredients-item-title">사용할 때의 주의사항</div>
+      <p class="ingredients-item-desc-warning">
+        1. 화장품 사용 시 또는 사용 후 직사광선에 의하여 사용부위가 붉은 반점, 부어오름 또는 가려움증 등의 이상 증상이나 부작용이 있는 경우에는 전문의 등과 상담할 것.<br>
+        2. 상처가 있는 부위 등에는 사용을 자제할 것.<br>
+        3. 보관 및 취급 시 주의사항<br>
+        &nbsp;&nbsp;1) 어린이의 손이 닿지 않는 곳에 보관할 것.<br>
+        &nbsp;&nbsp;2) 직사광선을 피해서 보관할 것.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- ===== 전성분 표기 섹션 END ===== -->
 
 <section style="padding:80px 48px;background:#fff;">
   <div style="max-width:1000px;margin:0 auto;box-sizing:border-box;">

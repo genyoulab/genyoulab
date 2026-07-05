@@ -202,50 +202,72 @@
     <div class="gnb-drop-wrap">
       <button class="gnb-link gnb-drop-btn">SHOP</button>
       <div class="gnb-dropdown gnb-mega-menu">
-        <!-- 3SecFix™ 라인 컬럼 -->
-        <div class="gnb-mega-col">
-          <div class="gnb-mega-title">3SecFix™ 라인</div>
-          <a href="/product.html?category=3secfix-line" class="gnb-drop-item">
-            전체 보기<span class="gnb-drop-sub">3SecFix™ 라인업</span>
-          </a>
-          <a href="/product.html?category=3step-3secfix" class="gnb-drop-item">
-            3step 3SecFix™<span class="gnb-drop-sub">3초 3단계 풀 패키지</span>
-          </a>
-          <a href="/product-reset-mist.html" class="gnb-drop-item">
-            리셋 베일 토너<span class="gnb-drop-sub">칙! — 유수분 밸런싱</span>
-          </a>
-          <a href="/product-restore-serum.html" class="gnb-drop-item">
-            리스토어 세럼<span class="gnb-drop-sub">톡! — 수분 밀도</span>
-          </a>
-          <a href="/product-recover-balm.html" class="gnb-drop-item">
-            리커버 크림 밤<span class="gnb-drop-sub">쓱! — 마지막 보호막</span>
-          </a>
-        </div>
-        <!-- 올리브 부스터 라인 컬럼 -->
-        <div class="gnb-mega-col">
-          <div class="gnb-mega-title">올리브 부스터 라인</div>
-          <a href="/product.html?category=olive-booster-line" class="gnb-drop-item">
-            전체 보기<span class="gnb-drop-sub">올리브 활성성분 부스팅</span>
-          </a>
-          <a href="/product.html?category=olive-glow-booster" class="gnb-drop-item">
-            올리브 글로우 부스터<span class="gnb-drop-sub">광채 피부의 시작</span>
-          </a>
-        </div>
-        <!-- 썬,바디,헤어 라인 컬럼 -->
-        <div class="gnb-mega-col">
-          <div class="gnb-mega-title">썬,바디,헤어 라인</div>
-          <a href="/product.html?category=sun-body-hair-line" class="gnb-drop-item">
-            전체 보기<span class="gnb-drop-sub">전신 토탈 케어 라인</span>
-          </a>
-          <a href="/product.html?category=sun-care" class="gnb-drop-item">
-            썬케어<span class="gnb-drop-sub">피부 보호 선스크린</span>
-          </a>
-          <a href="/product.html?category=body-care" class="gnb-drop-item">
-            바디케어<span class="gnb-drop-sub">바디 진정 및 보습</span>
-          </a>
-          <a href="/product.html?category=hair-care" class="gnb-drop-item">
-            헤어케어<span class="gnb-drop-sub">두피 및 모발 영양</span>
-          </a>
+        <div class="gnb-accordion">
+          <!-- 1. 3SecFix™ -->
+          <div class="gnb-acc-item" tabindex="0" aria-expanded="false">
+            <button class="gnb-acc-trigger" type="button">
+              3SecFix™
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="gnb-acc-arrow">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="gnb-acc-content">
+              <div class="gnb-acc-inner">
+                <a href="/product.html?category=3step-3secfix" class="gnb-drop-item">
+                  3SecFix™ 3Step<span class="gnb-drop-sub">3초 3단계 풀 패키지</span>
+                </a>
+                <a href="/product-reset-mist.html" class="gnb-drop-item">
+                  리셋 베일 토너<span class="gnb-drop-sub">칙! — 유수분 밸런싱</span>
+                </a>
+                <a href="/product-restore-serum.html" class="gnb-drop-item">
+                  리스토어 세럼<span class="gnb-drop-sub">톡! — 수분 밀도</span>
+                </a>
+                <a href="/product-recover-balm.html" class="gnb-drop-item">
+                  리커버 크림 밤<span class="gnb-drop-sub">쓱! — 마지막 보호막</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. 올리브 부스터 라인 -->
+          <div class="gnb-acc-item" tabindex="0" aria-expanded="false">
+            <button class="gnb-acc-trigger" type="button">
+              올리브 부스터 라인
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="gnb-acc-arrow">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="gnb-acc-content">
+              <div class="gnb-acc-inner">
+                <a href="/product.html?category=olive-glow-booster" class="gnb-drop-item">
+                  올리브 글로우 부스터<span class="gnb-drop-sub">광채 피부의 시작</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 썬,바디,헤어 라인 -->
+          <div class="gnb-acc-item" tabindex="0" aria-expanded="false">
+            <button class="gnb-acc-trigger" type="button">
+              썬,바디,헤어 라인
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="gnb-acc-arrow">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="gnb-acc-content">
+              <div class="gnb-acc-inner">
+                <a href="/product.html?category=sun-care" class="gnb-drop-item">
+                  썬케어<span class="gnb-drop-sub">피부 보호 선스크린</span>
+                </a>
+                <a href="/product.html?category=body-care" class="gnb-drop-item">
+                  바디 케어<span class="gnb-drop-sub">바디 진정 및 보습</span>
+                </a>
+                <a href="/product.html?category=hair-care" class="gnb-drop-item">
+                  헤어 케어<span class="gnb-drop-sub">두피 및 모발 영양</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -358,26 +380,57 @@
       </div>
       <div class="util-nav-section">
         <div class="util-nav-title">SHOP</div>
-        
-        <!-- 3SecFix™ 라인 -->
-        <div style="font-family:'Pretendard', sans-serif; font-size:11px; font-weight:600; color:#7a9a3f; letter-spacing:0.08em; padding: 6px 4px 2px; text-transform:uppercase; border-bottom:0.5px solid #e8e4da; margin-top:8px;">3SecFix™ 라인</div>
-        <a href="/product.html?category=3secfix-line" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">전체 보기</a>
-        <a href="/product.html?category=3step-3secfix" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">3step 3SecFix™</a>
-        <a href="/product-reset-mist.html" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">리셋 베일 토너</a>
-        <a href="/product-restore-serum.html" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">리스토어 세럼</a>
-        <a href="/product-recover-balm.html" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">리커버 크림 밤</a>
+        <div class="gnb-accordion">
+          <!-- 1. 3SecFix™ -->
+          <div class="gnb-acc-item" tabindex="0" aria-expanded="false">
+            <button class="gnb-acc-trigger" type="button">
+              3SecFix™
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="gnb-acc-arrow">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="gnb-acc-content">
+              <div class="gnb-acc-inner">
+                <a href="/product.html?category=3step-3secfix" onclick="closeUtilMenu()">3step 3SecFix™</a>
+                <a href="/product-reset-mist.html" onclick="closeUtilMenu()">리셋 베일 토너</a>
+                <a href="/product-restore-serum.html" onclick="closeUtilMenu()">리스토어 세럼</a>
+                <a href="/product-recover-balm.html" onclick="closeUtilMenu()">리커버 크림 밤</a>
+              </div>
+            </div>
+          </div>
 
-        <!-- 올리브 부스터 라인 -->
-        <div style="font-family:'Pretendard', sans-serif; font-size:11px; font-weight:600; color:#7a9a3f; letter-spacing:0.08em; padding: 6px 4px 2px; text-transform:uppercase; border-bottom:0.5px solid #e8e4da; margin-top:12px;">올리브 부스터 라인</div>
-        <a href="/product.html?category=olive-booster-line" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">전체 보기</a>
-        <a href="/product.html?category=olive-glow-booster" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">올리브 글로우 부스터</a>
+          <!-- 2. 올리브 부스터 라인 -->
+          <div class="gnb-acc-item" tabindex="0" aria-expanded="false">
+            <button class="gnb-acc-trigger" type="button">
+              올리브 부스터 라인
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="gnb-acc-arrow">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="gnb-acc-content">
+              <div class="gnb-acc-inner">
+                <a href="/product.html?category=olive-glow-booster" onclick="closeUtilMenu()">올리브 글로우 부스터</a>
+              </div>
+            </div>
+          </div>
 
-        <!-- 썬,바디,헤어 라인 -->
-        <div style="font-family:'Pretendard', sans-serif; font-size:11px; font-weight:600; color:#7a9a3f; letter-spacing:0.08em; padding: 6px 4px 2px; text-transform:uppercase; border-bottom:0.5px solid #e8e4da; margin-top:12px;">썬,바디,헤어 라인</div>
-        <a href="/product.html?category=sun-body-hair-line" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">전체 보기</a>
-        <a href="/product.html?category=sun-care" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">썬케어</a>
-        <a href="/product.html?category=body-care" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">바디케어</a>
-        <a href="/product.html?category=hair-care" onclick="closeUtilMenu()" style="padding-left:12px; font-size:13px;">헤어케어</a>
+          <!-- 3. 썬,바디,헤어 라인 -->
+          <div class="gnb-acc-item" tabindex="0" aria-expanded="false">
+            <button class="gnb-acc-trigger" type="button">
+              썬,바디,헤어 라인
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="gnb-acc-arrow">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="gnb-acc-content">
+              <div class="gnb-acc-inner">
+                <a href="/product.html?category=sun-care" onclick="closeUtilMenu()">썬케어</a>
+                <a href="/product.html?category=body-care" onclick="closeUtilMenu()">바디 케어</a>
+                <a href="/product.html?category=hair-care" onclick="closeUtilMenu()">헤어 케어</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="util-nav-section">
         <div class="util-nav-title">EXPERIENCE</div>

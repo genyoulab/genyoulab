@@ -419,32 +419,214 @@ nav {
   box-shadow: 0 4px 12px rgba(74, 94, 47, 0.15);
 }
 
-/* ── GNB SHOP 메가 메뉴 ── */
+/* ── GNB SHOP 메가 메뉴 및 아코디언 ── */
 .gnb-mega-menu {
-  display: flex !important;
-  gap: 28px;
-  min-width: 580px;
-  padding: 24px !important;
+  display: block !important;
+  min-width: 320px;
+  padding: 16px !important;
   box-sizing: border-box;
 }
 
-.gnb-mega-col {
-  flex: 1;
+.gnb-accordion {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
+  width: 100%;
 }
 
-.gnb-mega-title {
-  font-family: 'Pretendard', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--color-secondary);
-  letter-spacing: 0.08em;
-  padding: 4px 8px;
-  text-transform: uppercase;
-  border-bottom: 0.5px solid var(--color-muted);
-  margin-bottom: 4px;
+.gnb-acc-item {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
 }
+
+.gnb-acc-item:hover,
+.gnb-acc-item:focus-within {
+  background: rgba(74, 94, 47, 0.04);
+}
+
+.gnb-acc-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a5e2f;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s ease;
+}
+
+.gnb-acc-trigger:hover,
+.gnb-acc-trigger:focus {
+  color: #27500A;
+}
+
+.gnb-acc-arrow {
+  transition: transform 0.25s ease-in-out;
+  color: #7a9a3f;
+}
+
+.gnb-acc-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.25s ease-in-out, opacity 0.25s ease-in-out;
+}
+
+.gnb-acc-inner {
+  padding: 4px 12px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* 호버, 포커스 및 활성화 클래스 상태 정의 */
+.gnb-acc-item:hover .gnb-acc-content,
+.gnb-acc-item:focus-within .gnb-acc-content,
+.gnb-acc-item.is-active .gnb-acc-content {
+  max-height: 250px;
+  opacity: 1;
+}
+
+.gnb-acc-item:hover .gnb-acc-arrow,
+.gnb-acc-item:focus-within .gnb-acc-arrow,
+.gnb-acc-item.is-active .gnb-acc-arrow {
+  transform: rotate(180deg);
+}
+
+/* 모바일 드로어 내부 아코디언 스타일 대응 */
+.util-nav-mobile .gnb-acc-trigger {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2e2e2e;
+  border-bottom: 0.5px solid #ede9e0;
+  padding: 12px 4px;
+}
+
+.util-nav-mobile .gnb-acc-inner {
+  padding: 4px 8px 8px 12px;
+}
+
+.util-nav-mobile .gnb-acc-inner a {
+  display: block;
+  padding: 8px 8px 8px 12px;
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+  border-bottom: 0.5px solid #ede9e0;
+}
+
+.util-nav-mobile .gnb-acc-inner a:last-child {
+  border-bottom: none;
+}
+
+.util-nav-mobile .gnb-acc-inner a:hover {
+  color: #4a5e2f;
+}
+
+.util-nav-mobile .gnb-acc-item:focus-within,
+.util-nav-mobile .gnb-acc-item:hover {
+  background: none;
+}
+
+/* ── 전성분 표기 섹션 (Ingredients Section) ── */
+.ingredients-section {
+  padding: 80px 48px;
+  background: #fdfdfb;
+  border-top: 0.5px solid #e8e4da;
+  border-bottom: 0.5px solid #e8e4da;
+}
+
+.ingredients-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 디지털 단상자 카드 (사용자 첨부 이미지 디자인 모사) */
+.ingredients-card {
+  background: #ffffff;
+  border: 1px solid #e8e6df;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(74, 94, 47, 0.02);
+  font-family: 'Pretendard', sans-serif;
+  color: #2e2e2e;
+}
+
+.ingredients-card-meta {
+  font-size: 13px;
+  font-weight: 600;
+  color: #739050;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.ingredients-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2e2e2e;
+  line-height: 1.4;
+  margin: 0 0 4px 0;
+}
+
+.ingredients-card-subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2e2e2e;
+  margin: 0 0 12px 0;
+}
+
+.ingredients-card-volume {
+  font-size: 13.5px;
+  color: #8c8a82;
+  margin-bottom: 24px;
+}
+
+.ingredients-card-divider {
+  height: 1px;
+  background: #eae8e1;
+  margin: 20px 0;
+  border: none;
+}
+
+.ingredients-item-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #333333;
+  margin: 24px 0 8px 0;
+  letter-spacing: -0.01em;
+}
+
+.ingredients-item-desc {
+  font-size: 13px;
+  line-height: 1.62;
+  color: #555555;
+  margin: 0 0 20px 0;
+}
+
+.ingredients-item-desc-warning {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0;
+}
+
+/* 반응형 모바일 뷰 */
+@media (max-width: 767px) {
+  .ingredients-section {
+    padding: 60px 20px;
+  }
+  .ingredients-card {
+    padding: 28px 24px;
+  }
+}
+
 
 

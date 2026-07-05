@@ -128,3 +128,56 @@ document.addEventListener('DOMContentLoaded', () => {
 function floatBuyClick() {
   if (currentProduct) openSmartstore(currentProduct.productKey);
 }
+
+// GNB Shop 아코디언 인터랙션
+document.addEventListener('DOMContentLoaded', () => {
+  const accItems = document.querySelectorAll('.gnb-acc-item');
+
+  accItems.forEach(item => {
+    const trigger = item.querySelector('.gnb-acc-trigger');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const isActive = item.classList.contains('is-active');
+
+      // 다른 모든 아이템 닫기
+      accItems.forEach(otherItem => {
+        otherItem.classList.remove('is-active');
+        otherItem.setAttribute('aria-expanded', 'false');
+      });
+
+      // 토글 상태 변경
+      if (!isActive) {
+        item.classList.add('is-active');
+        item.setAttribute('aria-expanded', 'true');
+      } else {
+        item.classList.remove('is-active');
+        item.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // 호버/포커스 리셋 처리 (PC 환경에서 마우스 동작과 터치 동작 충돌 방지)
+    item.addEventListener('mouseenter', () => {
+      accItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('is-active');
+          otherItem.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  });
+
+  // 영역 외부 클릭 시 아코디언 모두 닫기
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.gnb-acc-item')) {
+      accItems.forEach(item => {
+        item.classList.remove('is-active');
+        item.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+});
+
