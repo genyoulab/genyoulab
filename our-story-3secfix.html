@@ -472,16 +472,22 @@
   <main>
 <!-- 섹션 1 — 히어로 -->
 <section style="min-height:70vh; display:flex; align-items:center;
-  justify-content:center; padding:80px 48px; background:#f2f0e8; text-align:center;">
-  <div style="max-width:720px;">
+  justify-content:center; padding:80px 48px; text-align:center; position:relative; overflow:hidden; background:#1b2214;">
+  <!-- 배경 비디오 (z-index: 0) -->
+  <video autoplay muted loop playsinline src="./3-SecFix.mp4" poster="./genyou3step.jpg" aria-label="3SecFix™ 3초 자가 회복 메커니즘 영상" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:0; pointer-events:none;"></video>
+  
+  <!-- 다크 오버레이 (z-index: 1) -->
+  <div class="hero-video-overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0, 0, 0, 0.4); z-index:1; pointer-events:none;"></div>
+
+  <div style="max-width:720px; position:relative; z-index:2;">
     <div style="font-family:'Pretendard',sans-serif; font-size:clamp(48px,8vw,96px);
-      font-weight:500; font-style:italic; color:#4a5e2f; line-height:1;
+      font-weight:500; font-style:italic; color:#ffffff; line-height:1;
       margin-bottom:20px;">3SecFix™</div>
     <p style="font-family:'Pretendard',sans-serif; font-size:clamp(16px,2.5vw,20px);
-      color:#2e2e2e; font-weight:500; margin-bottom:8px;">
+      color:#ffffff; font-weight:500; margin-bottom:8px;">
       오직 피부가 필요한 만큼만.
     </p>
-    <p style="font-family:'Pretendard',sans-serif; font-size:18px; color:#4a5e2f; font-weight:500; margin-bottom:12px;">
+    <p style="font-family:'Pretendard',sans-serif; font-size:18px; color:rgba(255,255,255,0.85); font-weight:500; margin-bottom:12px;">
       피부가 쉬어야 할 때 3초면 충분합니다!
     </p>
   </div>

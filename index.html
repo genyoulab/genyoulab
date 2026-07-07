@@ -6,6 +6,9 @@
   <title>GenYou Lab | 피부에 필요한 것만, 필요한 만큼.</title>
   <meta name="description" content="Beauty in letting things rest. — 성분은 깊게, 단계는 짧게, 피부는 편하게.">
   <link rel="stylesheet" href="./style.css">
+  <link rel="preload" href="./home%20hero1.jpeg" as="image">
+  <link rel="preload" href="./home%20hero2.jpeg" as="image">
+  <link rel="preload" href="./home%20hero3.jpeg" as="image">
 
   <meta property="og:title" content="GenYou Lab — 피부에 필요한 것만, 필요한 만큼.">
   <meta property="og:description" content="성분은 깊게, 단계는 짧게, 피부는 편하게.">
@@ -168,6 +171,41 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   #gnb { padding: 0 32px; }
   .gnb-link { font-size: 12px; padding: 8px 10px; }
+}
+
+/* ── 히어로 이미지 슬라이더 ── */
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.hero-slide.active {
+  opacity: 1 !important;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(242, 240, 232, 0.6) 0%, rgba(242, 240, 232, 0.5) 100%);
 }
 </style>
 
@@ -451,8 +489,17 @@
 
   <main>
     <section class="hero-section" style="padding: 60px 0; position: relative; overflow: hidden; min-height: calc(100vh - 64px); display: flex; align-items: center; justify-content: center;">
-      <canvas id="hero-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
-      <div class="container" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%;">
+      <!-- 배경 이미지 슬라이더 -->
+      <div class="hero-slider">
+        <img src="./home%20hero1.jpeg" class="hero-slide active" alt="GenYou Lab 브랜드 히어로 이미지 1">
+        <img src="./home%20hero2.jpeg" class="hero-slide" alt="GenYou Lab 브랜드 히어로 이미지 2">
+        <img src="./home%20hero3.jpeg" class="hero-slide" alt="GenYou Lab 브랜드 히어로 이미지 3">
+      </div>
+      <!-- 반투명 오버레이 -->
+      <div class="hero-overlay"></div>
+      
+      <canvas id="hero-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2;"></canvas>
+      <div class="container" style="position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%;">
         <h2 class="text-h1 font-slogan-allerta" style="margin-bottom: 16px; line-height: 1.3;">
           Deep in ingredients,<br>
           Simple in steps,<br>
@@ -861,6 +908,19 @@ document.addEventListener('keydown', e => {
       a.style.color = '#27500A';
     }
   });
+})();
+
+// 홈 화면 히어로 슬라이더 제어
+(function() {
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length > 0) {
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+  }
 })();
 </script>
 </body>
